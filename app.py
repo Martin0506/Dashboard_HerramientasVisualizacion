@@ -160,23 +160,8 @@ with st.sidebar.expander("📦 Subcategoría", expanded=False):
         label_visibility="collapsed"
     )
 
-# Inicialización de estados para interactividad
-if "filtro_extra" not in st.session_state:
-    st.session_state.filtro_extra = None
-if "ultimo_click" not in st.session_state:
-    st.session_state.ultimo_click = None
-
-def limpiar_filtro():
-    st.session_state.filtro_extra = None
-    st.session_state.ultimo_click = None
-
-st.sidebar.button("🧹 Limpiar filtro de gráfico", on_click=limpiar_filtro)
-
-# Mostrar filtro actual (para depuración, puedes quitarlo luego)
-st.sidebar.write("Filtro actual:", st.session_state.filtro_extra)
-
 # ============================================================
-# APLICACIÓN DE FILTROS
+# APLICACIÓN DE FILTROS (SOLO SIDEBAR)
 # ============================================================
 mask = (
     (df["fecha"].dt.date >= rango_fechas[0]) &
@@ -187,11 +172,6 @@ mask = (
     (df["subcategoria"].isin(subcategoria_seleccionada))
 )
 df_filtrado = df[mask]
-
-if st.session_state.filtro_extra is not None:
-    col_fe, val_fe = list(st.session_state.filtro_extra.items())[0]
-    if col_fe in df_filtrado.columns:
-        df_filtrado = df_filtrado[df_filtrado[col_fe] == val_fe]
 
 # ============================================================
 # KPIs GLOBALES
@@ -208,7 +188,7 @@ productos_distintos = df_filtrado["id_producto"].nunique()
 # ENCABEZADO Y KPIs
 # ============================================================
 st.title("📊 Dashboard de Desempeño Comercial — TechNorte")
-st.markdown("*Audiencia:* Gerentes regionales · Director comercial · Marketing")
+st.markdown("**Audiencia:** Gerentes regionales · Director comercial · Marketing")
 
 col1, col2, col3, col4 = st.columns(4)
 with col1: st.metric("💰 Ventas Totales",     f"${ventas_totales:,.0f}")
@@ -241,12 +221,12 @@ with tab0:
     st.header("Contexto del negocio y descripción de los datos")
     st.subheader("🏢 La empresa")
     st.markdown("""
-    *TechNorte* es una cadena de retail de tecnología, electrodomésticos, oficina, audio/video y gaming.
-    Opera en *Colombia, México, Perú, Chile y Argentina* a través de tres canales:
-    *tienda física, portal online y distribuidores*.
+    **TechNorte** es una cadena de retail de tecnología, electrodomésticos, oficina, audio/video y gaming.
+    Opera en **Colombia, México, Perú, Chile y Argentina** a través de tres canales:
+    **tienda física, portal online y distribuidores**.
     """)
     st.subheader("🎯 Audiencia y necesidad")
-    st.markdown("Dirigido a *gerentes regionales, director comercial y marketing* para monitorear "
+    st.markdown("Dirigido a **gerentes regionales, director comercial y marketing** para monitorear "
                 "ventas y rentabilidad y decidir sobre campañas, inventario y recursos.")
     st.subheader("❓ Preguntas de negocio")
     st.markdown("""
@@ -259,11 +239,11 @@ with tab0:
     st.subheader("🗃️ Estructura de los datos")
     st.markdown("""
     Modelo estrella con tres archivos CSV:
-    - *fact_ventas.csv*: ~500 k transacciones diarias con métricas calculadas.
-    - *dim_productos.csv*: 50 productos con categoría, subcategoría, marca y precio.
-    - *dim_clientes.csv*: 1 000 clientes anonimizados con segmento y ubicación.
+    - **fact_ventas.csv**: ~500 k transacciones diarias con métricas calculadas.
+    - **dim_productos.csv**: 50 productos con categoría, subcategoría, marca y precio.
+    - **dim_clientes.csv**: 1 000 clientes anonimizados con segmento y ubicación.
     """)
-    st.info("💡 Haz clic en cualquier gráfico para filtrar todo el dashboard. Vuelve a hacer clic en el mismo gráfico (o en una zona vacía) para eliminar el filtro. También puedes usar el botón de la barra lateral.")
+    st.info("💡 Utiliza los filtros de la barra lateral para segmentar el análisis.")
 
 # ----------------------------------------------------------
 # TAB 1: RESUMEN EJECUTIVO
@@ -298,7 +278,7 @@ with tab1:
         fig_map = px.choropleth(
             ventas_pais, locations="pais", locationmode="country names",
             color="ingreso", color_continuous_scale=SCALE_BLUE,
-            title="Ventas por país (clic para filtrar)",
+            title="Ventas por país",
             labels={"ingreso": "Ingresos USD"}
         )
         fig_map.update_geos(
@@ -308,40 +288,16 @@ with tab1:
             showocean=True, oceancolor="#0A1520",
             showlakes=False
         )
-        event_map = st.plotly_chart(fig_map, use_container_width=True,
-                                    on_select="rerun", selection_mode="points",
-                                    key="mapa_paises")
-        if event_map is not None and event_map.selection is not None:
-            st.session_state["ultimo_click"] = "mapa_paises"
-            if event_map.selection.points:
-                pais_sel = event_map.selection.points[0].get("location", None)
-                if pais_sel:
-                    # Mapeo inverso para mantener consistencia con los datos (si fuera necesario)
-                    # Pero como ya cambiamos en cargar_datos, el valor estará en inglés.
-                    st.session_state.filtro_extra = {"pais": pais_sel}
-            else:
-                if st.session_state.get("ultimo_click") == "mapa_paises":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_map, use_container_width=True)
 
     st.subheader("Composición de ventas por categoría (Treemap)")
     treemap_data = df_filtrado.groupby("categoria")["ingreso"].sum().reset_index()
     fig_treemap = px.treemap(
         treemap_data, path=["categoria"], values="ingreso",
         color="ingreso", color_continuous_scale=SCALE_BLUE,
-        title="Ventas por categoría (clic para filtrar)"
+        title="Ventas por categoría"
     )
-    event_treemap = st.plotly_chart(fig_treemap, use_container_width=True,
-                                    on_select="rerun", selection_mode="points",
-                                    key="treemap_categorias")
-    if event_treemap is not None and event_treemap.selection is not None:
-        st.session_state["ultimo_click"] = "treemap_categorias"
-        if event_treemap.selection.points:
-            cat_sel = event_treemap.selection.points[0].get("label", None)
-            if cat_sel:
-                st.session_state.filtro_extra = {"categoria": cat_sel}
-        else:
-            if st.session_state.get("ultimo_click") == "treemap_categorias":
-                st.session_state.filtro_extra = None
+    st.plotly_chart(fig_treemap, use_container_width=True)
 
 # ----------------------------------------------------------
 # TAB 2: PORTAFOLIO Y CANALES
@@ -356,20 +312,9 @@ with tab2:
         fig_barras = px.bar(
             top_sub, x="ingreso", y="subcategoria", orientation="h",
             color="ingreso", color_continuous_scale=SCALE_BLUE,
-            title="Ingresos por subcategoría (clic para filtrar)"
+            title="Ingresos por subcategoría (Top 15)"
         )
-        event_barras = st.plotly_chart(fig_barras, use_container_width=True,
-                                       on_select="rerun", selection_mode="points",
-                                       key="barras_subcategoria")
-        if event_barras is not None and event_barras.selection is not None:
-            st.session_state["ultimo_click"] = "barras_subcategoria"
-            if event_barras.selection.points:
-                sub_sel = event_barras.selection.points[0].get("y", None)
-                if sub_sel:
-                    st.session_state.filtro_extra = {"subcategoria": sub_sel}
-            else:
-                if st.session_state.get("ultimo_click") == "barras_subcategoria":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_barras, use_container_width=True)
 
     with col_b:
         st.subheader("Margen por Canal y Categoría (Heatmap)")
@@ -387,46 +332,20 @@ with tab2:
         df_filtrado, x="descuento_pct", y="margen_pct",
         size="ingreso", color="categoria",
         hover_data=["subcategoria","canal"],
-        title="Descuento vs Margen (clic para filtrar por categoría)",
+        title="Descuento vs Margen (tamaño = ventas)",
         color_discrete_sequence=PALETTE_QUAL
     )
     fig_scatter.add_hline(y=0, line_dash="dash", line_color=COLOR_NEGATIVE)
-    event_scatter = st.plotly_chart(fig_scatter, use_container_width=True,
-                                    on_select="rerun", selection_mode="points",
-                                    key="scatter_descuento")
-    if event_scatter is not None and event_scatter.selection is not None:
-        st.session_state["ultimo_click"] = "scatter_descuento"
-        if event_scatter.selection.points:
-            pt = event_scatter.selection.points[0]
-            if "point_index" in pt:
-                idx = pt["point_index"]
-                if 0 <= idx < len(df_filtrado):
-                    cat_sel = df_filtrado.iloc[idx]["categoria"]
-                    st.session_state.filtro_extra = {"categoria": cat_sel}
-        else:
-            if st.session_state.get("ultimo_click") == "scatter_descuento":
-                st.session_state.filtro_extra = None
+    st.plotly_chart(fig_scatter, use_container_width=True)
 
     st.subheader("Ventas por Categoría y Canal")
     ventas_cat_canal = df_filtrado.groupby(["categoria","canal"])["ingreso"].sum().reset_index()
     fig_stacked = px.bar(
         ventas_cat_canal, x="categoria", y="ingreso", color="canal",
-        title="Ingresos por categoría y canal (clic en categoría)",
-        barmode="stack",
+        title="Ingresos por categoría y canal", barmode="stack",
         color_discrete_sequence=[COLOR_PRIMARY, COLOR_BLUE, COLOR_LIGHT]
     )
-    event_stacked = st.plotly_chart(fig_stacked, use_container_width=True,
-                                    on_select="rerun", selection_mode="points",
-                                    key="stacked_categoria")
-    if event_stacked is not None and event_stacked.selection is not None:
-        st.session_state["ultimo_click"] = "stacked_categoria"
-        if event_stacked.selection.points:
-            cat_sel = event_stacked.selection.points[0].get("x", None)
-            if cat_sel:
-                st.session_state.filtro_extra = {"categoria": cat_sel}
-        else:
-            if st.session_state.get("ultimo_click") == "stacked_categoria":
-                st.session_state.filtro_extra = None
+    st.plotly_chart(fig_stacked, use_container_width=True)
 
 # ----------------------------------------------------------
 # TAB 3: CLIENTES Y GEOGRAFÍA
@@ -445,20 +364,9 @@ with tab3:
             top_clientes, x="ventas", y="nombre_cliente", orientation="h",
             color="utilidad",
             color_continuous_scale=[[0,COLOR_NEGATIVE],[0.5,COLOR_PALE],[1,COLOR_PRIMARY]],
-            title="Top 10 clientes (clic para filtrar)"
+            title="Top 10 clientes (color = utilidad)"
         )
-        event_top = st.plotly_chart(fig_top, use_container_width=True,
-                                    on_select="rerun", selection_mode="points",
-                                    key="barras_clientes")
-        if event_top is not None and event_top.selection is not None:
-            st.session_state["ultimo_click"] = "barras_clientes"
-            if event_top.selection.points:
-                cliente_sel = event_top.selection.points[0].get("y", None)
-                if cliente_sel:
-                    st.session_state.filtro_extra = {"nombre_cliente": cliente_sel}
-            else:
-                if st.session_state.get("ultimo_click") == "barras_clientes":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_top, use_container_width=True)
 
     with col_cli2:
         st.subheader("Concentración geográfica")
@@ -477,18 +385,7 @@ with tab3:
             showocean=True, oceancolor="#0A1520",
             showcountries=True, countrycolor="#2A3A4A"
         )
-        event_geo = st.plotly_chart(fig_geo, use_container_width=True,
-                                    on_select="rerun", selection_mode="points",
-                                    key="geo_burbujas")
-        if event_geo is not None and event_geo.selection is not None:
-            st.session_state["ultimo_click"] = "geo_burbujas"
-            if event_geo.selection.points:
-                pais_sel = event_geo.selection.points[0].get("location", None)
-                if pais_sel:
-                    st.session_state.filtro_extra = {"pais": pais_sel}
-            else:
-                if st.session_state.get("ultimo_click") == "geo_burbujas":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_geo, use_container_width=True)
 
     st.subheader("Resumen por País")
     tabla_pais = df_filtrado.groupby("pais").agg(
@@ -512,22 +409,11 @@ with tab4:
     st.subheader("Distribución del Margen por Categoría")
     fig_box = px.box(
         df_filtrado, x="categoria", y="margen_pct", color="categoria",
-        title="Boxplot de Margen % (clic en categoría para filtrar)",
+        title="Boxplot de Margen % por Categoría",
         color_discrete_sequence=PALETTE_QUAL
     )
     fig_box.add_hline(y=0, line_dash="dash", line_color=COLOR_NEGATIVE)
-    event_box = st.plotly_chart(fig_box, use_container_width=True,
-                                on_select="rerun", selection_mode="points",
-                                key="boxplot_categoria")
-    if event_box is not None and event_box.selection is not None:
-        st.session_state["ultimo_click"] = "boxplot_categoria"
-        if event_box.selection.points:
-            cat_sel = event_box.selection.points[0].get("x", None)
-            if cat_sel:
-                st.session_state.filtro_extra = {"categoria": cat_sel}
-        else:
-            if st.session_state.get("ultimo_click") == "boxplot_categoria":
-                st.session_state.filtro_extra = None
+    st.plotly_chart(fig_box, use_container_width=True)
 
     st.subheader("Clientes: Ventas vs Margen")
     clientes_agg = df_filtrado.groupby("nombre_cliente").agg(
@@ -537,24 +423,10 @@ with tab4:
         clientes_agg, x="ventas", y="margen", size="num_pedidos",
         hover_name="nombre_cliente", color="margen",
         color_continuous_scale=[[0,COLOR_NEGATIVE],[0.5,COLOR_PALE],[1,COLOR_PRIMARY]],
-        title="Ventas vs Margen (clic para seleccionar cliente)"
+        title="Clientes: Ventas vs Margen (tamaño = pedidos)"
     )
     fig_clientes.add_hline(y=0, line_dash="dash", line_color=COLOR_NEGATIVE)
-    event_clientes = st.plotly_chart(fig_clientes, use_container_width=True,
-                                     on_select="rerun", selection_mode="points",
-                                     key="scatter_clientes")
-    if event_clientes is not None and event_clientes.selection is not None:
-        st.session_state["ultimo_click"] = "scatter_clientes"
-        if event_clientes.selection.points:
-            pt = event_clientes.selection.points[0]
-            if "point_index" in pt:
-                idx = pt["point_index"]
-                if 0 <= idx < len(clientes_agg):
-                    cliente_sel = clientes_agg.iloc[idx]["nombre_cliente"]
-                    st.session_state.filtro_extra = {"nombre_cliente": cliente_sel}
-        else:
-            if st.session_state.get("ultimo_click") == "scatter_clientes":
-                st.session_state.filtro_extra = None
+    st.plotly_chart(fig_clientes, use_container_width=True)
 
     st.subheader("Evolución del Descuento Promedio")
     desc_mes = df_filtrado.groupby("anio_mes")["descuento_pct"].mean().reset_index()
@@ -579,7 +451,7 @@ with tab4:
     st.plotly_chart(fig_dia, use_container_width=True)
 
 # ----------------------------------------------------------
-# TAB 5: ESTRATEGIA COMERCIAL (con interactividad)
+# TAB 5: ESTRATEGIA COMERCIAL
 # ----------------------------------------------------------
 with tab5:
     st.header("🎯 Estrategia Comercial")
@@ -605,22 +477,10 @@ with tab5:
             barmode="group",
             xaxis=dict(tickmode="array", tickvals=list(range(1,13)), ticktext=nombres_meses),
             yaxis_title="Ingresos USD",
-            title="Ingresos mensuales por año (clic en año para filtrar)",
+            title="Ingresos mensuales por año",
             legend=dict(orientation="h", x=0, y=1.12), height=380
         )
-        event_yoy = st.plotly_chart(fig_yoy, use_container_width=True,
-                                    on_select="rerun", selection_mode="points",
-                                    key="yoy_barras")
-        if event_yoy is not None and event_yoy.selection is not None:
-            st.session_state["ultimo_click"] = "yoy_barras"
-            if event_yoy.selection.points:
-                curva = event_yoy.selection.points[0].get("curveNumber", None)
-                if curva is not None and curva < len(anios_disponibles):
-                    anio_sel = str(anios_disponibles[curva])
-                    st.session_state.filtro_extra = {"anio": anio_sel}
-            else:
-                if st.session_state.get("ultimo_click") == "yoy_barras":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_yoy, use_container_width=True)
 
         if len(anios_disponibles) == 2:
             pivot_yoy = yoy.pivot(index="mes", columns="anio", values="ingreso").reset_index()
@@ -687,7 +547,7 @@ with tab5:
     pareto_df["cumsum_pct"] = pareto_df["ingreso"].cumsum() / pareto_df["ingreso"].sum()
     pareto_df["rank"] = range(1, len(pareto_df)+1)
     n_80 = int((pareto_df["cumsum_pct"] < 0.80).sum()) + 1
-    st.info(f"📌 El *{n_80/len(pareto_df):.1%}* de los {etiqueta} genera el *80 %* de los ingresos "
+    st.info(f"📌 El **{n_80/len(pareto_df):.1%}** de los {etiqueta} genera el **80 %** de los ingresos "
             f"({n_80} de {len(pareto_df)}).")
 
     fig_pareto = make_subplots(specs=[[{"secondary_y": True}]])
@@ -712,20 +572,7 @@ with tab5:
     fig_pareto.update_yaxes(title_text="Ingresos USD", secondary_y=False)
     fig_pareto.update_yaxes(title_text="% Acumulado", tickformat=".0%",
                             range=[0,1.05], secondary_y=True)
-    event_pareto = st.plotly_chart(fig_pareto, use_container_width=True,
-                                   on_select="rerun", selection_mode="points",
-                                   key="pareto_barras")
-    if event_pareto is not None and event_pareto.selection is not None:
-        st.session_state["ultimo_click"] = "pareto_barras"
-        if event_pareto.selection.points:
-            idx = event_pareto.selection.points[0].get("point_index", None)
-            if idx is not None and 0 <= idx < len(pareto_df):
-                nombre_sel = pareto_df.iloc[idx]["nombre"]
-                columna = "nombre_producto" if pareto_por == "Productos" else "nombre_cliente"
-                st.session_state.filtro_extra = {columna: nombre_sel}
-        else:
-            if st.session_state.get("ultimo_click") == "pareto_barras":
-                st.session_state.filtro_extra = None
+    st.plotly_chart(fig_pareto, use_container_width=True)
 
     st.markdown("---")
 
@@ -755,23 +602,10 @@ with tab5:
                        marker_color=color_b, showlegend=False), row=1, col=2)
         fig_promo_kpi.update_yaxes(tickformat=".2%", row=1, col=1)
         fig_promo_kpi.update_layout(
-            height=320, title="Impacto general de las promociones (clic para filtrar)",
+            height=320, title="Impacto general de las promociones",
             paper_bgcolor=BG_DARK, plot_bgcolor=BG_CHART
         )
-        event_promo = st.plotly_chart(fig_promo_kpi, use_container_width=True,
-                                      on_select="rerun", selection_mode="points",
-                                      key="promo_kpi")
-        if event_promo is not None and event_promo.selection is not None:
-            st.session_state["ultimo_click"] = "promo_kpi"
-            if event_promo.selection.points:
-                trace_name = event_promo.selection.points[0].get("data", {}).get("name", "")
-                if "Con Promoción" in trace_name:
-                    st.session_state.filtro_extra = {"es_promocion": True}
-                elif "Sin Promoción" in trace_name:
-                    st.session_state.filtro_extra = {"es_promocion": False}
-            else:
-                if st.session_state.get("ultimo_click") == "promo_kpi":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_promo_kpi, use_container_width=True)
 
         erosion = df_filtrado.groupby(["categoria","es_promocion"])["margen_pct"].mean().reset_index()
         erosion["tipo"] = erosion["es_promocion"].map({True:"Con Promo", False:"Sin Promo"})
@@ -834,24 +668,12 @@ with tab5:
             color_discrete_map=colores_rfm,
             hover_name="nombre_cliente",
             hover_data={"monetario":":,.0f","recencia":True,"frecuencia":True},
-            title="Mapa RFM: Recencia vs Frecuencia (clic para seleccionar cliente)",
+            title="Mapa RFM: Recencia vs Frecuencia",
             labels={"recencia":"Días desde última compra (↓ mejor)",
                     "frecuencia":"N° de transacciones (↑ mejor)"}
         )
         fig_rfm_scatter.update_layout(height=340, legend=dict(orientation="h", y=1.1, x=0))
-        event_rfm = st.plotly_chart(fig_rfm_scatter, use_container_width=True,
-                                    on_select="rerun", selection_mode="points",
-                                    key="rfm_scatter")
-        if event_rfm is not None and event_rfm.selection is not None:
-            st.session_state["ultimo_click"] = "rfm_scatter"
-            if event_rfm.selection.points:
-                idx = event_rfm.selection.points[0].get("point_index", None)
-                if idx is not None and 0 <= idx < len(rfm):
-                    cliente_rfm = rfm.iloc[idx]["nombre_cliente"]
-                    st.session_state.filtro_extra = {"nombre_cliente": cliente_rfm}
-            else:
-                if st.session_state.get("ultimo_click") == "rfm_scatter":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_rfm_scatter, use_container_width=True)
 
         seg_dist = (rfm.groupby("segmento")
                     .agg(clientes=("nombre_cliente","count"), monetario_total=("monetario","sum"))
@@ -868,7 +690,7 @@ with tab5:
         st.plotly_chart(fig_seg, use_container_width=True)
 
 # ----------------------------------------------------------
-# TAB 6: PORTAFOLIO AVANZADO (con interactividad)
+# TAB 6: PORTAFOLIO AVANZADO
 # ----------------------------------------------------------
 with tab6:
     st.header("🔍 Portafolio Avanzado")
@@ -896,23 +718,11 @@ with tab6:
                 "B — Importantes (15%)": COLOR_BLUE,
                 "C — Marginales (5%)":   COLOR_PALE,
             },
-            title="Clasificación ABC por Ingreso (clic en producto para filtrar)",
+            title="Clasificación ABC por Ingreso",
             labels={"rank":"Ranking Producto","ingreso":"Ingresos USD","clase":"Clase"},
         )
         fig_abc.update_layout(height=380, legend=dict(orientation="h", y=1.1, x=0))
-        event_abc = st.plotly_chart(fig_abc, use_container_width=True,
-                                    on_select="rerun", selection_mode="points",
-                                    key="abc_barras")
-        if event_abc is not None and event_abc.selection is not None:
-            st.session_state["ultimo_click"] = "abc_barras"
-            if event_abc.selection.points:
-                idx = event_abc.selection.points[0].get("point_index", None)
-                if idx is not None and 0 <= idx < len(abc_df):
-                    prod_sel = abc_df.iloc[idx]["nombre_producto"]
-                    st.session_state.filtro_extra = {"nombre_producto": prod_sel}
-            else:
-                if st.session_state.get("ultimo_click") == "abc_barras":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_abc, use_container_width=True)
 
         resumen_abc = abc_df.groupby("clase").agg(
             productos=("nombre_producto","count"), ingresos=("ingreso","sum")
@@ -958,21 +768,10 @@ with tab6:
             if es_pct:
                 fig_banda.update_yaxes(tickformat=".1%", row=fila, col=columna)
         fig_banda.update_layout(
-            height=500, title="KPIs por Banda de Precio (clic en banda para filtrar)",
+            height=500, title="KPIs por Banda de Precio",
             paper_bgcolor=BG_DARK, plot_bgcolor=BG_CHART
         )
-        event_banda = st.plotly_chart(fig_banda, use_container_width=True,
-                                      on_select="rerun", selection_mode="points",
-                                      key="banda_barras")
-        if event_banda is not None and event_banda.selection is not None:
-            st.session_state["ultimo_click"] = "banda_barras"
-            if event_banda.selection.points:
-                x_val = event_banda.selection.points[0].get("x", None)
-                if x_val:
-                    st.session_state.filtro_extra = {"banda_precio": x_val}
-            else:
-                if st.session_state.get("ultimo_click") == "banda_barras":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_banda, use_container_width=True)
 
     st.markdown("---")
 
@@ -1057,22 +856,11 @@ with tab6:
                 angularaxis=dict(gridcolor=GRID_DARK, linecolor=GRID_DARK,
                                  tickfont=dict(color=FONT_LIGHT))
             ),
-            title="Comparativo multidimensional de Marcas (clic en marca para filtrar)",
+            title="Comparativo multidimensional de Marcas (0–100 normalizado)",
             legend=dict(orientation="h", y=-0.18),
             height=520
         )
-        event_radar = st.plotly_chart(fig_radar, use_container_width=True,
-                                      on_select="rerun", selection_mode="points",
-                                      key="radar_marcas")
-        if event_radar is not None and event_radar.selection is not None:
-            st.session_state["ultimo_click"] = "radar_marcas"
-            if event_radar.selection.points:
-                marca_sel = event_radar.selection.points[0].get("name", None)
-                if marca_sel:
-                    st.session_state.filtro_extra = {"marca": marca_sel}
-            else:
-                if st.session_state.get("ultimo_click") == "radar_marcas":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_radar, use_container_width=True)
 
     with col_ciudad:
         st.subheader("Top Ciudades por Desempeño")
@@ -1102,19 +890,8 @@ with tab6:
             textposition="outside",
         ))
         fig_ciudad.update_layout(
-            title="Ingresos por Ciudad (clic para filtrar)",
+            title="Ingresos por Ciudad (color = Margen %)",
             xaxis_title="Ingresos USD",
             height=520, margin=dict(r=80)
         )
-        event_ciudad = st.plotly_chart(fig_ciudad, use_container_width=True,
-                                       on_select="rerun", selection_mode="points",
-                                       key="ciudad_barras")
-        if event_ciudad is not None and event_ciudad.selection is not None:
-            st.session_state["ultimo_click"] = "ciudad_barras"
-            if event_ciudad.selection.points:
-                ciudad_sel = event_ciudad.selection.points[0].get("y", None)
-                if ciudad_sel:
-                    st.session_state.filtro_extra = {"ciudad": ciudad_sel}
-            else:
-                if st.session_state.get("ultimo_click") == "ciudad_barras":
-                    st.session_state.filtro_extra = None
+        st.plotly_chart(fig_ciudad, use_container_width=True)

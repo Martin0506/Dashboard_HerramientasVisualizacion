@@ -280,14 +280,17 @@ with tab1:
             yaxis2=dict(title="Margen %", overlaying="y", side="right", tickformat=".2%"),
             legend=dict(x=0.01, y=0.99), height=400
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
     with col_der:
         st.subheader("Distribución geográfica de Ventas")
         ventas_pais = df_filtrado.groupby("pais")["ingreso"].sum().reset_index()
+        _iso3 = {"Colombia":"COL","México":"MEX","Perú":"PER","Chile":"CHL","Argentina":"ARG"}
+        ventas_pais["iso3"] = ventas_pais["pais"].map(_iso3)
         fig_map = px.choropleth(
-            ventas_pais, locations="pais", locationmode="country names",
+            ventas_pais, locations="iso3", locationmode="ISO-3",
             color="ingreso", color_continuous_scale=SCALE_BLUE,
+            hover_name="pais",
             title="Ventas por país", labels={"ingreso": "Ingresos USD"}
         )
         fig_map.update_geos(
@@ -297,7 +300,7 @@ with tab1:
             showocean=True, oceancolor="#0A1520",
             showlakes=False
         )
-        st.plotly_chart(fig_map, use_container_width=True)
+        st.plotly_chart(fig_map, width='stretch')
 
         pais_click = st.selectbox(
             "Filtrar por país:", ["Todos"] + list(paises_disponibles), key="pais_sel"
@@ -313,7 +316,7 @@ with tab1:
         color="ingreso", color_continuous_scale=SCALE_BLUE,
         title="Ventas por categoría"
     )
-    st.plotly_chart(fig_treemap, use_container_width=True)
+    st.plotly_chart(fig_treemap, width='stretch')
 
     cat_click = st.selectbox(
         "Filtrar por categoría:", ["Todas"] + list(categorias_disponibles), key="cat_sel"
@@ -337,7 +340,7 @@ with tab2:
             color="ingreso", color_continuous_scale=SCALE_BLUE,
             title="Ingresos por subcategoría (Top 15)"
         )
-        st.plotly_chart(fig_barras, use_container_width=True)
+        st.plotly_chart(fig_barras, width='stretch')
         sub_click = st.selectbox(
             "Filtrar por subcategoría:", ["Todas"] + list(subcategorias_disponibles), key="sub_sel"
         )
@@ -354,7 +357,7 @@ with tab2:
             color_continuous_scale=SCALE_DIV,
             title="Margen % promedio por Canal y Categoría"
         )
-        st.plotly_chart(fig_heat, use_container_width=True)
+        st.plotly_chart(fig_heat, width='stretch')
 
     st.subheader("Relación Descuento vs Margen (Scatter)")
     fig_scatter = px.scatter(
@@ -365,7 +368,7 @@ with tab2:
         color_discrete_sequence=PALETTE_QUAL
     )
     fig_scatter.add_hline(y=0, line_dash="dash", line_color=COLOR_NEGATIVE)
-    st.plotly_chart(fig_scatter, use_container_width=True)
+    st.plotly_chart(fig_scatter, width='stretch')
 
     st.subheader("Ventas por Categoría y Canal")
     ventas_cat_canal = df_filtrado.groupby(["categoria","canal"])["ingreso"].sum().reset_index()
@@ -374,7 +377,7 @@ with tab2:
         title="Ingresos por categoría y canal", barmode="stack",
         color_discrete_sequence=[COLOR_PRIMARY, COLOR_BLUE, COLOR_LIGHT]
     )
-    st.plotly_chart(fig_stacked, use_container_width=True)
+    st.plotly_chart(fig_stacked, width='stretch')
 
 # ----------------------------------------------------------
 # TAB 3: CLIENTES Y GEOGRAFÍA
@@ -395,16 +398,19 @@ with tab3:
             color_continuous_scale=[[0,COLOR_NEGATIVE],[0.5,COLOR_PALE],[1,COLOR_PRIMARY]],
             title="Top 10 clientes (color = utilidad)"
         )
-        st.plotly_chart(fig_top, use_container_width=True)
+        st.plotly_chart(fig_top, width='stretch')
 
     with col_cli2:
         st.subheader("Concentración geográfica")
         geo_data = df_filtrado.groupby("pais").agg(
             ventas=("ingreso","sum"), utilidad=("margen","sum")
         ).reset_index()
+        _iso3 = {"Colombia":"COL","México":"MEX","Perú":"PER","Chile":"CHL","Argentina":"ARG"}
+        geo_data["iso3"] = geo_data["pais"].map(_iso3)
         fig_geo = px.scatter_geo(
-            geo_data, locations="pais", locationmode="country names",
+            geo_data, locations="iso3", locationmode="ISO-3",
             size="ventas", color="utilidad",
+            hover_name="pais",
             color_continuous_scale=SCALE_DIV,
             title="Tamaño = Ventas · Color = Utilidad", projection="natural earth"
         )
@@ -413,7 +419,7 @@ with tab3:
             showocean=True, oceancolor="#0A1520",
             showcountries=True, countrycolor="#2A3A4A"
         )
-        st.plotly_chart(fig_geo, use_container_width=True)
+        st.plotly_chart(fig_geo, width='stretch')
 
     st.subheader("Resumen por País")
     tabla_pais = df_filtrado.groupby("pais").agg(
@@ -427,7 +433,7 @@ with tab3:
         .background_gradient(subset=["Ventas"],   cmap="Blues")
         .background_gradient(subset=["Utilidad"], cmap="Blues")
         .format({"Ventas":"${:,.0f}","Utilidad":"${:,.0f}","Margen_Porc":"{:.2%}"}),
-        use_container_width=True
+        width='stretch'
     )
 
 # ----------------------------------------------------------
@@ -441,7 +447,7 @@ with tab4:
         color_discrete_sequence=PALETTE_QUAL
     )
     fig_box.add_hline(y=0, line_dash="dash", line_color=COLOR_NEGATIVE)
-    st.plotly_chart(fig_box, use_container_width=True)
+    st.plotly_chart(fig_box, width='stretch')
 
     st.subheader("Clientes: Ventas vs Margen")
     clientes_agg = df_filtrado.groupby("nombre_cliente").agg(
@@ -454,7 +460,7 @@ with tab4:
         title="Clientes: Ventas vs Margen (tamaño = pedidos)"
     )
     fig_clientes.add_hline(y=0, line_dash="dash", line_color=COLOR_NEGATIVE)
-    st.plotly_chart(fig_clientes, use_container_width=True)
+    st.plotly_chart(fig_clientes, width='stretch')
 
     st.subheader("Evolución del Descuento Promedio")
     desc_mes = df_filtrado.groupby("anio_mes")["descuento_pct"].mean().reset_index()
@@ -464,7 +470,7 @@ with tab4:
         color_discrete_sequence=[COLOR_WARNING]
     )
     fig_desc.update_layout(yaxis=dict(tickformat=".1%"))
-    st.plotly_chart(fig_desc, use_container_width=True)
+    st.plotly_chart(fig_desc, width='stretch')
 
     st.subheader("Mapa de Calor: Ventas por Día de la Semana y Canal")
     heat_dia   = df_filtrado.groupby(["dia_semana","canal"])["ingreso"].sum().reset_index()
@@ -476,7 +482,7 @@ with tab4:
         color_continuous_scale=SCALE_SEQ,
         title="Ingresos por día de la semana y canal"
     )
-    st.plotly_chart(fig_dia, use_container_width=True)
+    st.plotly_chart(fig_dia, width='stretch')
 
 # ----------------------------------------------------------
 # TAB 5: ESTRATEGIA COMERCIAL
@@ -508,7 +514,7 @@ with tab5:
             title="Ingresos mensuales por año",
             legend=dict(orientation="h", x=0, y=1.12), height=380
         )
-        st.plotly_chart(fig_yoy, use_container_width=True)
+        st.plotly_chart(fig_yoy, width='stretch')
 
         if len(anios_disponibles) == 2:
             pivot_yoy = yoy.pivot(index="mes", columns="anio", values="ingreso").reset_index()
@@ -528,7 +534,7 @@ with tab5:
                 yaxis=dict(tickformat=".0%"),
                 title=f"Crecimiento % mensual ({col_a1} → {col_a2})", height=280
             )
-            st.plotly_chart(fig_crec, use_container_width=True)
+            st.plotly_chart(fig_crec, width='stretch')
 
     with col_wf:
         st.subheader("Puente Ingreso → Utilidad")
@@ -554,7 +560,7 @@ with tab5:
             title="Descomposición del Resultado (USD)",
             yaxis_title="USD", height=700, showlegend=False
         )
-        st.plotly_chart(fig_wf, use_container_width=True)
+        st.plotly_chart(fig_wf, width='stretch')
 
     st.markdown("---")
 
@@ -600,7 +606,7 @@ with tab5:
     fig_pareto.update_yaxes(title_text="Ingresos USD", secondary_y=False)
     fig_pareto.update_yaxes(title_text="% Acumulado", tickformat=".0%",
                             range=[0,1.05], secondary_y=True)
-    st.plotly_chart(fig_pareto, use_container_width=True)
+    st.plotly_chart(fig_pareto, width='stretch')
 
     st.markdown("---")
 
@@ -633,7 +639,7 @@ with tab5:
             height=320, title="Impacto general de las promociones",
             paper_bgcolor=BG_DARK, plot_bgcolor=BG_CHART
         )
-        st.plotly_chart(fig_promo_kpi, use_container_width=True)
+        st.plotly_chart(fig_promo_kpi, width='stretch')
 
         erosion = df_filtrado.groupby(["categoria","es_promocion"])["margen_pct"].mean().reset_index()
         erosion["tipo"] = erosion["es_promocion"].map({True:"Con Promo", False:"Sin Promo"})
@@ -645,7 +651,7 @@ with tab5:
         )
         fig_erosion.update_yaxes(tickformat=".2%")
         fig_erosion.update_layout(height=340, legend=dict(orientation="h", y=1.1, x=0))
-        st.plotly_chart(fig_erosion, use_container_width=True)
+        st.plotly_chart(fig_erosion, width='stretch')
 
     with col_rfm_col:
         st.subheader("Segmentación RFM de Clientes")
@@ -701,7 +707,7 @@ with tab5:
                     "frecuencia":"N° de transacciones (↑ mejor)"}
         )
         fig_rfm_scatter.update_layout(height=340, legend=dict(orientation="h", y=1.1, x=0))
-        st.plotly_chart(fig_rfm_scatter, use_container_width=True)
+        st.plotly_chart(fig_rfm_scatter, width='stretch')
 
         seg_dist = (rfm.groupby("segmento")
                     .agg(clientes=("nombre_cliente","count"), monetario_total=("monetario","sum"))
@@ -715,7 +721,7 @@ with tab5:
         )
         fig_seg.update_traces(texttemplate="%{text} clientes", textposition="outside")
         fig_seg.update_layout(height=340, showlegend=False)
-        st.plotly_chart(fig_seg, use_container_width=True)
+        st.plotly_chart(fig_seg, width='stretch')
 
 # ----------------------------------------------------------
 # TAB 6: PORTAFOLIO AVANZADO
@@ -750,7 +756,7 @@ with tab6:
             labels={"rank":"Ranking Producto","ingreso":"Ingresos USD","clase":"Clase"},
         )
         fig_abc.update_layout(height=380, legend=dict(orientation="h", y=1.1, x=0))
-        st.plotly_chart(fig_abc, use_container_width=True)
+        st.plotly_chart(fig_abc, width='stretch')
 
         resumen_abc = abc_df.groupby("clase").agg(
             productos=("nombre_producto","count"), ingresos=("ingreso","sum")
@@ -763,7 +769,7 @@ with tab6:
             .style
             .format({"Ingresos USD":"${:,.0f}","% Ingresos":"{:.1%}","% Productos":"{:.1%}"})
             .background_gradient(subset=["Ingresos USD"], cmap="Blues"),
-            use_container_width=True
+            width='stretch'
         )
 
     with col_banda:
@@ -799,7 +805,7 @@ with tab6:
             height=500, title="KPIs por Banda de Precio",
             paper_bgcolor=BG_DARK, plot_bgcolor=BG_CHART
         )
-        st.plotly_chart(fig_banda, use_container_width=True)
+        st.plotly_chart(fig_banda, width='stretch')
 
     st.markdown("---")
 
@@ -853,7 +859,7 @@ with tab6:
         labels={"x":"Meses desde primera compra","y":"Cohorte","color":"USD / cliente"}
     )
     fig_cohort.update_layout(height=520)
-    st.plotly_chart(fig_cohort, use_container_width=True)
+    st.plotly_chart(fig_cohort, width='stretch')
 
     st.markdown("---")
 
@@ -940,7 +946,7 @@ with tab6:
             legend=dict(orientation="h", y=-0.20, font=dict(color=FONT_LIGHT)),
             height=560
         )
-        st.plotly_chart(fig_radar, use_container_width=True)
+        st.plotly_chart(fig_radar, width='stretch')
 
     with col_ciudad:
         st.subheader("Top Ciudades por Desempeño")
@@ -1005,4 +1011,4 @@ with tab6:
             xaxis_title="Ingresos USD",
             height=560, margin=dict(r=90)
         )
-        st.plotly_chart(fig_ciudad, use_container_width=True)
+        st.plotly_chart(fig_ciudad, width='stretch')

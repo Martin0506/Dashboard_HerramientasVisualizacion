@@ -40,10 +40,10 @@ SCALE_SEQ  = "Blues"
 # ============================================================
 # TEMA OSCURO GLOBAL PARA PLOTLY
 # ============================================================
-BG_DARK    = "#0E1117"
-BG_CHART   = "#131720"
-FONT_LIGHT = "#D0DCF0"
-GRID_DARK  = "#1E2A3A"
+BG_DARK    = "#0E1117"   # fondo exterior del gráfico (igual al de Streamlit dark)
+BG_CHART   = "#131720"   # fondo del área de trazado
+FONT_LIGHT = "#D0DCF0"   # texto en gráficos
+GRID_DARK  = "#1E2A3A"   # líneas de grilla
 
 _tpl = go.layout.Template()
 _tpl.layout = go.Layout(
@@ -107,9 +107,6 @@ def cargar_datos():
         clientes[["id_cliente", "segmento", "tipo_cliente", "nombre_cliente"]],
         on="id_cliente", how="left"
     )
-    # Corrección de nombres de país para los mapas de Plotly
-    df["pais"] = df["pais"].replace({"México": "Mexico", "Perú": "Peru"})
-
     df["anio_mes"]   = df["fecha"].dt.to_period("M").astype(str)
     df["anio"]       = df["fecha"].dt.year
     df["mes"]        = df["fecha"].dt.month
@@ -160,8 +157,16 @@ with st.sidebar.expander("📦 Subcategoría", expanded=False):
         label_visibility="collapsed"
     )
 
+if "filtro_extra" not in st.session_state:
+    st.session_state.filtro_extra = None
+
+def limpiar_filtro():
+    st.session_state.filtro_extra = None
+
+st.sidebar.button("🧹 Limpiar filtro de gráfico", on_click=limpiar_filtro)
+
 # ============================================================
-# APLICACIÓN DE FILTROS (SOLO SIDEBAR)
+# APLICACIÓN DE FILTROS
 # ============================================================
 mask = (
     (df["fecha"].dt.date >= rango_fechas[0]) &
@@ -172,6 +177,11 @@ mask = (
     (df["subcategoria"].isin(subcategoria_seleccionada))
 )
 df_filtrado = df[mask]
+
+if st.session_state.filtro_extra is not None:
+    col_fe, val_fe = list(st.session_state.filtro_extra.items())[0]
+    if col_fe in df_filtrado.columns:
+        df_filtrado = df_filtrado[df_filtrado[col_fe] == val_fe]
 
 # ============================================================
 # KPIs GLOBALES
@@ -243,7 +253,7 @@ with tab0:
     - **dim_productos.csv**: 50 productos con categoría, subcategoría, marca y precio.
     - **dim_clientes.csv**: 1 000 clientes anonimizados con segmento y ubicación.
     """)
-    st.info("💡 Utiliza los filtros de la barra lateral para segmentar el análisis.")
+    st.info("💡 Usa los filtros desplegables de la barra lateral para segmentar el análisis.")
 
 # ----------------------------------------------------------
 # TAB 1: RESUMEN EJECUTIVO
@@ -278,8 +288,7 @@ with tab1:
         fig_map = px.choropleth(
             ventas_pais, locations="pais", locationmode="country names",
             color="ingreso", color_continuous_scale=SCALE_BLUE,
-            title="Ventas por país",
-            labels={"ingreso": "Ingresos USD"}
+            title="Ventas por país", labels={"ingreso": "Ingresos USD"}
         )
         fig_map.update_geos(
             showcountries=True, countrycolor="#2A3A4A",
@@ -290,6 +299,13 @@ with tab1:
         )
         st.plotly_chart(fig_map, use_container_width=True)
 
+        pais_click = st.selectbox(
+            "Filtrar por país:", ["Todos"] + list(paises_disponibles), key="pais_sel"
+        )
+        st.session_state.filtro_extra = (
+            {"pais": pais_click} if pais_click != "Todos" else None
+        )
+
     st.subheader("Composición de ventas por categoría (Treemap)")
     treemap_data = df_filtrado.groupby("categoria")["ingreso"].sum().reset_index()
     fig_treemap = px.treemap(
@@ -298,6 +314,13 @@ with tab1:
         title="Ventas por categoría"
     )
     st.plotly_chart(fig_treemap, use_container_width=True)
+
+    cat_click = st.selectbox(
+        "Filtrar por categoría:", ["Todas"] + list(categorias_disponibles), key="cat_sel"
+    )
+    st.session_state.filtro_extra = (
+        {"categoria": cat_click} if cat_click != "Todas" else None
+    )
 
 # ----------------------------------------------------------
 # TAB 2: PORTAFOLIO Y CANALES
@@ -315,6 +338,12 @@ with tab2:
             title="Ingresos por subcategoría (Top 15)"
         )
         st.plotly_chart(fig_barras, use_container_width=True)
+        sub_click = st.selectbox(
+            "Filtrar por subcategoría:", ["Todas"] + list(subcategorias_disponibles), key="sub_sel"
+        )
+        st.session_state.filtro_extra = (
+            {"subcategoria": sub_click} if sub_click != "Todas" else None
+        )
 
     with col_b:
         st.subheader("Margen por Canal y Categoría (Heatmap)")
@@ -377,8 +406,7 @@ with tab3:
             geo_data, locations="pais", locationmode="country names",
             size="ventas", color="utilidad",
             color_continuous_scale=SCALE_DIV,
-            title="Tamaño = Ventas · Color = Utilidad",
-            projection="natural earth"
+            title="Tamaño = Ventas · Color = Utilidad", projection="natural earth"
         )
         fig_geo.update_geos(
             bgcolor=BG_DARK, landcolor="#1A2535",
@@ -775,35 +803,56 @@ with tab6:
 
     st.markdown("---")
 
-    st.subheader("Retención de Clientes por Cohorte Mensual")
-    primera_compra = (df_filtrado.groupby("id_cliente")["fecha"].min()
-                      .reset_index().rename(columns={"fecha":"primera_fecha"}))
-    primera_compra["cohorte"] = primera_compra["primera_fecha"].dt.to_period("M").astype(str)
+    st.subheader("Ingresos por Cohorte Mensual")
+    st.caption(
+        "Cada fila es una cohorte de clientes según su mes de primera compra. "
+        "Los valores muestran el **ingreso promedio por cliente** ese mes. "
+        "El color más oscuro indica mayor gasto — útil para comparar el valor generado "
+        "por cada cohorte a lo largo del tiempo y detectar estacionalidad."
+    )
+
+    # Cohorte = mes de primera transacción (strftime evita el bug de Plotly con Period)
+    primera_compra = (
+        df_filtrado.groupby("id_cliente")["fecha"].min()
+        .reset_index().rename(columns={"fecha": "primera_fecha"})
+    )
+    primera_compra["cohorte"] = primera_compra["primera_fecha"].dt.strftime("%Y-%m")
 
     cohort_df = df_filtrado.merge(primera_compra[["id_cliente","cohorte"]], on="id_cliente")
-    cohort_df["periodo"] = cohort_df["fecha"].dt.to_period("M").astype(str)
-    cohorte_dt = pd.to_datetime(cohort_df["cohorte"])
-    periodo_dt = pd.to_datetime(cohort_df["periodo"])
+    cohort_df["periodo_mes"] = cohort_df["fecha"].dt.strftime("%Y-%m")
+
+    # Calcular índice de período (0 = mes de primera compra)
+    cohort_df["cohorte_dt"] = pd.to_datetime(cohort_df["cohorte"])
+    cohort_df["periodo_dt"] = pd.to_datetime(cohort_df["periodo_mes"])
     cohort_df["periodo_idx"] = (
-        (periodo_dt.dt.year  - cohorte_dt.dt.year) * 12
-        + (periodo_dt.dt.month - cohorte_dt.dt.month)
+        (cohort_df["periodo_dt"].dt.year  - cohort_df["cohorte_dt"].dt.year) * 12
+        + (cohort_df["periodo_dt"].dt.month - cohort_df["cohorte_dt"].dt.month)
     )
 
-    cohort_counts = (cohort_df.groupby(["cohorte","periodo_idx"])["id_cliente"]
-                     .nunique().reset_index())
-    cohort_pivot    = cohort_counts.pivot(index="cohorte", columns="periodo_idx", values="id_cliente")
-    cohort_retention = (cohort_pivot.divide(cohort_pivot[0], axis=0) * 100).round(1)
-    max_periodo = min(11, cohort_retention.columns.max())
-    cohort_retention = cohort_retention.loc[:, :max_periodo]
-    cohort_retention.columns = [f"Mes {i}" for i in cohort_retention.columns]
+    # Ingreso promedio por cliente de cada cohorte en cada período
+    cohort_rev = (
+        cohort_df.groupby(["cohorte","periodo_idx"])
+        .agg(ingresos=("ingreso","sum"), clientes=("id_cliente","nunique"))
+        .reset_index()
+    )
+    cohort_rev["ingreso_per_cliente"] = (cohort_rev["ingresos"] / cohort_rev["clientes"]).round(0)
+
+    cohort_pivot = cohort_rev.pivot(
+        index="cohorte", columns="periodo_idx", values="ingreso_per_cliente"
+    )
+    max_periodo = min(11, cohort_pivot.columns.max())
+    cohort_pivot = cohort_pivot.loc[:, :max_periodo]
+    cohort_pivot.columns = [f"Mes {i}" for i in cohort_pivot.columns]
+    cohort_pivot.index.name = "Cohorte"
 
     fig_cohort = px.imshow(
-        cohort_retention, text_auto=".0f",
-        color_continuous_scale=SCALE_BLUE, range_color=[0,100],
-        title="Retención (%) por Cohorte — Mes 0 = primera compra",
-        labels={"x":"Meses desde primera compra","y":"Cohorte","color":"Retención %"}
+        cohort_pivot,
+        text_auto=".0f",
+        color_continuous_scale=SCALE_BLUE,
+        title="Ingreso Promedio por Cliente según Cohorte (USD)",
+        labels={"x":"Meses desde primera compra","y":"Cohorte","color":"USD / cliente"}
     )
-    fig_cohort.update_layout(height=500)
+    fig_cohort.update_layout(height=520)
     st.plotly_chart(fig_cohort, use_container_width=True)
 
     st.markdown("---")
@@ -812,6 +861,7 @@ with tab6:
 
     with col_radar:
         st.subheader("Radar Comparativo por Marca")
+
         marcas_agg = df_filtrado.groupby("marca").agg(
             ventas=("ingreso","sum"), margen_pct=("margen_pct","mean"),
             descuento_prom=("descuento_pct","mean"),
@@ -819,7 +869,7 @@ with tab6:
         ).reset_index()
 
         top_n_marcas = st.slider("Marcas a comparar:", 3, 10, 6, key="radar_n")
-        top_marcas   = marcas_agg.nlargest(top_n_marcas, "ventas").copy()
+        top_marcas   = marcas_agg.nlargest(top_n_marcas, "ventas").copy().reset_index(drop=True)
 
         for d in ["ventas","margen_pct","cantidad","clientes_unicos"]:
             mn, mx = top_marcas[d].min(), top_marcas[d].max()
@@ -832,21 +882,51 @@ with tab6:
         cats_radar = ["Ventas","Margen %","Vol. Unidades","Clientes Únicos","Bajo Descuento"]
         norm_cols  = ["ventas_norm","margen_pct_norm","cantidad_norm",
                       "clientes_unicos_norm","descuento_norm"]
-        radar_palette = [
-            COLOR_NAVY, COLOR_PRIMARY, COLOR_BLUE,
-            COLOR_MID, COLOR_LIGHT, COLOR_PALE,
-            "#154360", "#7FB3D3", "#2E86C1", "#85C1E9"
+
+        # Paleta azul-cian con máximo contraste entre tonos
+        RADAR_COLORS = [
+            "#00D4FF",  # cian brillante
+            "#1E90FF",  # dodger blue
+            "#0047AB",  # cobalt blue
+            "#00BFFF",  # deep sky blue
+            "#6495ED",  # cornflower blue
+            "#4169E1",  # royal blue
+            "#87CEEB",  # sky blue
+            "#00CED1",  # dark turquoise
+            "#5F9EA0",  # cadet blue
+            "#B0E0E6",  # powder blue
         ]
 
+        def hex_rgba(hex_c, alpha):
+            h = hex_c.lstrip("#")
+            r, g, b = int(h[0:2],16), int(h[2:4],16), int(h[4:6],16)
+            return f"rgba({r},{g},{b},{alpha})"
+
+        # Selectbox para destacar una marca (simula fade-out del resto)
+        lista_marcas = ["Todas"] + list(top_marcas["marca"])
+        marca_foco = st.selectbox(
+            "Destacar marca:", lista_marcas, key="radar_foco",
+            help="Selecciona una marca para resaltarla y opacifar las demás"
+        )
+
         fig_radar = go.Figure()
-        for i, (_, marca_row) in enumerate(top_marcas.iterrows()):
+        for i, marca_row in top_marcas.iterrows():
+            es_foco = (marca_foco == "Todas" or marca_row["marca"] == marca_foco)
+            color_hex = RADAR_COLORS[i % len(RADAR_COLORS)]
+            fill_alpha = 0.40 if es_foco else 0.04
+            line_w     = 3    if es_foco else 1
+            line_color = color_hex if es_foco else hex_rgba(color_hex, 0.20)
+
             valores = [marca_row[c] for c in norm_cols] + [marca_row[norm_cols[0]]]
-            color_m = radar_palette[i % len(radar_palette)]
             fig_radar.add_trace(go.Scatterpolar(
-                r=valores, theta=cats_radar + [cats_radar[0]],
-                fill="toself", name=marca_row["marca"],
-                line=dict(color=color_m), fillcolor=color_m, opacity=0.20,
+                r=valores,
+                theta=cats_radar + [cats_radar[0]],
+                fill="toself",
+                name=marca_row["marca"],
+                line=dict(color=line_color, width=line_w),
+                fillcolor=hex_rgba(color_hex, fill_alpha),
             ))
+
         fig_radar.update_layout(
             polar=dict(
                 bgcolor=BG_CHART,
@@ -857,8 +937,8 @@ with tab6:
                                  tickfont=dict(color=FONT_LIGHT))
             ),
             title="Comparativo multidimensional de Marcas (0–100 normalizado)",
-            legend=dict(orientation="h", y=-0.18),
-            height=520
+            legend=dict(orientation="h", y=-0.20, font=dict(color=FONT_LIGHT)),
+            height=560
         )
         st.plotly_chart(fig_radar, use_container_width=True)
 
@@ -873,25 +953,56 @@ with tab6:
             "ingresos", ascending=True
         )
 
+        # Normalizar margen a 0–1 manualmente para usar el rango completo del colorscale
+        top_ciudades = top_ciudades.copy()
+        m_min = top_ciudades["margen_pct"].min()
+        m_max = top_ciudades["margen_pct"].max()
+        if m_max > m_min:
+            top_ciudades["margen_norm"] = (
+                (top_ciudades["margen_pct"] - m_min) / (m_max - m_min)
+            )
+        else:
+            top_ciudades["margen_norm"] = 0.5
+
+        # Etiquetas reales del colorbar en 5 puntos del rango
+        n_ticks   = 5
+        tick_vals = [i / (n_ticks - 1) for i in range(n_ticks)]
+        tick_text = [f"{m_min + t * (m_max - m_min):.2%}" for t in tick_vals]
+
         fig_ciudad = go.Figure()
         fig_ciudad.add_trace(go.Bar(
-            y=top_ciudades["ciudad"], x=top_ciudades["ingresos"],
+            y=top_ciudades["ciudad"],
+            x=top_ciudades["ingresos"],
             orientation="h",
             marker=dict(
-                color=top_ciudades["margen_pct"],
-                colorscale=[[0,COLOR_NEGATIVE],[0.4,COLOR_WARNING],[1,COLOR_PRIMARY]],
-                colorbar=dict(title="Margen %", tickformat=".1%",
-                              tickfont=dict(color=FONT_LIGHT),
-                              title_font=dict(color=FONT_LIGHT)),
+                # Usar valores normalizados → garantiza que se use todo el espectro
+                color=top_ciudades["margen_norm"],
+                cmin=0.0,
+                cmax=1.0,
+                colorscale=[
+                    [0.00, "#D6EAF8"],   # azul muy pálido → margen más bajo
+                    [0.25, "#85C1E9"],   # azul claro
+                    [0.55, "#2471A3"],   # azul medio
+                    [1.00, "#0D2137"],   # navy oscuro     → margen más alto
+                ],
+                colorbar=dict(
+                    title="Margen %",
+                    tickvals=tick_vals,
+                    ticktext=tick_text,
+                    tickfont=dict(color=FONT_LIGHT),
+                    title_font=dict(color=FONT_LIGHT),
+                    thickness=14,
+                ),
                 showscale=True,
             ),
-            text=[f"${v/1e3:.0f}K  |  {m:.1%}"
+            text=[f"${v/1e3:.0f}K  |  {m:.2%}"
                   for v, m in zip(top_ciudades["ingresos"], top_ciudades["margen_pct"])],
             textposition="outside",
+            textfont=dict(color=FONT_LIGHT),
         ))
         fig_ciudad.update_layout(
             title="Ingresos por Ciudad (color = Margen %)",
             xaxis_title="Ingresos USD",
-            height=520, margin=dict(r=80)
+            height=560, margin=dict(r=90)
         )
         st.plotly_chart(fig_ciudad, use_container_width=True)

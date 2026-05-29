@@ -1,0 +1,125 @@
+id_producto,nombre_producto,categoria,subcategoria,marca,precio_lista,banda_precio
+1,TechPro Celulares Pro,Tecnología,Celulares,TechPro,967.4,Alto
+2,TechPro Celulares Max,Tecnología,Celulares,TechPro,500.89,Medio
+3,Innova Celulares Pro,Tecnología,Celulares,Innova,831.44,Alto
+4,Innova Celulares Pro,Tecnología,Celulares,Innova,326.82,Medio
+5,SmartLife Celulares Max,Tecnología,Celulares,SmartLife,754.82,Medio
+6,SmartLife Celulares Pro,Tecnología,Celulares,SmartLife,805.12,Alto
+7,TechPro Computadores Max,Tecnología,Computadores,TechPro,1339.05,Alto
+8,TechPro Computadores Lite,Tecnología,Computadores,TechPro,1771.32,Alto
+9,TechPro Computadores Pro,Tecnología,Computadores,TechPro,1710.57,Alto
+10,Innova Computadores Plus,Tecnología,Computadores,Innova,1208.3,Alto
+11,Innova Computadores Max,Tecnología,Computadores,Innova,1058.38,Alto
+12,SmartLife Computadores Pro,Tecnología,Computadores,SmartLife,911.3,Alto
+13,SmartLife Computadores Pro,Tecnología,Computadores,SmartLife,1230.78,Alto
+14,SmartLife Computadores Lite,Tecnología,Computadores,SmartLife,1524.47,Alto
+15,TechPro Tablets Plus,Tecnología,Tablets,TechPro,721.74,Medio
+16,TechPro Tablets Plus,Tecnología,Tablets,TechPro,447.28,Medio
+17,Innova Tablets Lite,Tecnología,Tablets,Innova,746.41,Medio
+18,Innova Tablets Pro,Tecnología,Tablets,Innova,427.49,Medio
+19,Innova Tablets Max,Tecnología,Tablets,Innova,863.84,Alto
+20,SmartLife Tablets Max,Tecnología,Tablets,SmartLife,919.89,Alto
+21,SmartLife Tablets Plus,Tecnología,Tablets,SmartLife,566.78,Medio
+22,TechPro Accesorios Max,Tecnología,Accesorios,TechPro,105.53,Bajo
+23,TechPro Accesorios Max,Tecnología,Accesorios,TechPro,150.53,Bajo
+24,TechPro Accesorios Pro,Tecnología,Accesorios,TechPro,141.37,Bajo
+25,Innova Accesorios Max,Tecnología,Accesorios,Innova,74.51,Bajo
+26,Innova Accesorios Plus,Tecnología,Accesorios,Innova,90.49,Bajo
+27,SmartLife Accesorios Lite,Tecnología,Accesorios,SmartLife,176.43,Bajo
+28,SmartLife Accesorios Pro,Tecnología,Accesorios,SmartLife,84.36,Bajo
+29,ElectroHogar Refrigeración Lite,Electrodomésticos,Refrigeración,ElectroHogar,1161.63,Alto
+30,ElectroHogar Refrigeración Pro,Electrodomésticos,Refrigeración,ElectroHogar,895.38,Alto
+31,CoolLine Refrigeración Max,Electrodomésticos,Refrigeración,CoolLine,1517.61,Alto
+32,CoolLine Refrigeración Plus,Electrodomésticos,Refrigeración,CoolLine,1838.56,Alto
+33,CoolLine Refrigeración Plus,Electrodomésticos,Refrigeración,CoolLine,800.02,Alto
+34,HomeEase Refrigeración Max,Electrodomésticos,Refrigeración,HomeEase,1642.98,Alto
+35,HomeEase Refrigeración Lite,Electrodomésticos,Refrigeración,HomeEase,1645.82,Alto
+36,ElectroHogar Lavado Plus,Electrodomésticos,Lavado,ElectroHogar,862.0,Alto
+37,ElectroHogar Lavado Max,Electrodomésticos,Lavado,ElectroHogar,1009.53,Alto
+38,ElectroHogar Lavado Pro,Electrodomésticos,Lavado,ElectroHogar,1255.78,Alto
+39,CoolLine Lavado Max,Electrodomésticos,Lavado,CoolLine,1127.45,Alto
+40,CoolLine Lavado Plus,Electrodomésticos,Lavado,CoolLine,1096.41,Alto
+41,HomeEase Lavado Plus,Electrodomésticos,Lavado,HomeEase,1095.89,Alto
+42,HomeEase Lavado Plus,Electrodomésticos,Lavado,HomeEase,1029.11,Alto
+43,HomeEase Lavado Pro,Electrodomésticos,Lavado,HomeEase,1180.28,Alto
+44,ElectroHogar Cocción Lite,Electrodomésticos,Cocción,ElectroHogar,1014.88,Alto
+45,ElectroHogar Cocción Lite,Electrodomésticos,Cocción,ElectroHogar,489.24,Medio
+46,CoolLine Cocción Max,Electrodomésticos,Cocción,CoolLine,762.98,Medio
+47,CoolLine Cocción Lite,Electrodomésticos,Cocción,CoolLine,1177.51,Alto
+48,CoolLine Cocción Max,Electrodomésticos,Cocción,CoolLine,806.15,Alto
+49,HomeEase Cocción Lite,Electrodomésticos,Cocción,HomeEase,1073.34,Alto
+50,HomeEase Cocción Max,Electrodomésticos,Cocción,HomeEase,522.27,Medio
+51,ElectroHogar Climatización Pro,Electrodomésticos,Climatización,ElectroHogar,1358.84,Alto
+52,ElectroHogar Climatización Plus,Electrodomésticos,Climatización,ElectroHogar,721.42,Medio
+53,CoolLine Climatización Lite,Electrodomésticos,Climatización,CoolLine,963.4,Alto
+54,CoolLine Climatización Max,Electrodomésticos,Climatización,CoolLine,1665.81,Alto
+55,CoolLine Climatización Pro,Electrodomésticos,Climatización,CoolLine,794.22,Medio
+56,HomeEase Climatización Pro,Electrodomésticos,Climatización,HomeEase,1775.78,Alto
+57,HomeEase Climatización Max,Electrodomésticos,Climatización,HomeEase,841.23,Alto
+58,HomeEase Climatización Plus,Electrodomésticos,Climatización,HomeEase,1741.53,Alto
+59,OfficeLine Papelería Lite,Oficina,Papelería,OfficeLine,28.75,Bajo
+60,OfficeLine Papelería Plus,Oficina,Papelería,OfficeLine,48.4,Bajo
+61,ErgoMax Papelería Lite,Oficina,Papelería,ErgoMax,22.95,Bajo
+62,ErgoMax Papelería Lite,Oficina,Papelería,ErgoMax,24.71,Bajo
+63,PrintPlus Papelería Pro,Oficina,Papelería,PrintPlus,16.16,Bajo
+64,PrintPlus Papelería Pro,Oficina,Papelería,PrintPlus,20.21,Bajo
+65,PrintPlus Papelería Max,Oficina,Papelería,PrintPlus,31.48,Bajo
+66,OfficeLine Mobiliario Pro,Oficina,Mobiliario,OfficeLine,610.1,Medio
+67,OfficeLine Mobiliario Pro,Oficina,Mobiliario,OfficeLine,298.81,Medio
+68,ErgoMax Mobiliario Lite,Oficina,Mobiliario,ErgoMax,196.06,Bajo
+69,ErgoMax Mobiliario Max,Oficina,Mobiliario,ErgoMax,331.01,Medio
+70,PrintPlus Mobiliario Max,Oficina,Mobiliario,PrintPlus,500.5,Medio
+71,PrintPlus Mobiliario Plus,Oficina,Mobiliario,PrintPlus,307.95,Medio
+72,PrintPlus Mobiliario Plus,Oficina,Mobiliario,PrintPlus,674.87,Medio
+73,OfficeLine Impresión Pro,Oficina,Impresión,OfficeLine,138.77,Bajo
+74,OfficeLine Impresión Plus,Oficina,Impresión,OfficeLine,241.72,Medio
+75,ErgoMax Impresión Plus,Oficina,Impresión,ErgoMax,445.53,Medio
+76,ErgoMax Impresión Pro,Oficina,Impresión,ErgoMax,369.35,Medio
+77,ErgoMax Impresión Pro,Oficina,Impresión,ErgoMax,124.25,Bajo
+78,PrintPlus Impresión Pro,Oficina,Impresión,PrintPlus,199.46,Bajo
+79,PrintPlus Impresión Max,Oficina,Impresión,PrintPlus,314.51,Medio
+80,PrintPlus Impresión Max,Oficina,Impresión,PrintPlus,268.75,Medio
+81,SonicView Televisores Plus,Audio y Video,Televisores,SonicView,1124.52,Alto
+82,SonicView Televisores Pro,Audio y Video,Televisores,SonicView,1607.83,Alto
+83,SonicView Televisores Pro,Audio y Video,Televisores,SonicView,626.47,Medio
+84,AudioMaster Televisores Pro,Audio y Video,Televisores,AudioMaster,2815.92,Alto
+85,AudioMaster Televisores Max,Audio y Video,Televisores,AudioMaster,915.78,Alto
+86,VisionPro Televisores Plus,Audio y Video,Televisores,VisionPro,1034.37,Alto
+87,VisionPro Televisores Plus,Audio y Video,Televisores,VisionPro,2756.11,Alto
+88,VisionPro Televisores Max,Audio y Video,Televisores,VisionPro,1447.43,Alto
+89,SonicView Parlantes Lite,Audio y Video,Parlantes,SonicView,469.14,Medio
+90,SonicView Parlantes Plus,Audio y Video,Parlantes,SonicView,199.8,Bajo
+91,SonicView Parlantes Plus,Audio y Video,Parlantes,SonicView,145.01,Bajo
+92,AudioMaster Parlantes Max,Audio y Video,Parlantes,AudioMaster,486.86,Medio
+93,AudioMaster Parlantes Pro,Audio y Video,Parlantes,AudioMaster,394.15,Medio
+94,AudioMaster Parlantes Pro,Audio y Video,Parlantes,AudioMaster,101.06,Bajo
+95,VisionPro Parlantes Max,Audio y Video,Parlantes,VisionPro,103.89,Bajo
+96,VisionPro Parlantes Pro,Audio y Video,Parlantes,VisionPro,437.56,Medio
+97,VisionPro Parlantes Pro,Audio y Video,Parlantes,VisionPro,329.91,Medio
+98,SonicView Proyectores Plus,Audio y Video,Proyectores,SonicView,531.88,Medio
+99,SonicView Proyectores Max,Audio y Video,Proyectores,SonicView,1036.81,Alto
+100,AudioMaster Proyectores Pro,Audio y Video,Proyectores,AudioMaster,861.15,Alto
+101,AudioMaster Proyectores Lite,Audio y Video,Proyectores,AudioMaster,1428.18,Alto
+102,VisionPro Proyectores Lite,Audio y Video,Proyectores,VisionPro,662.55,Medio
+103,VisionPro Proyectores Plus,Audio y Video,Proyectores,VisionPro,543.97,Medio
+104,GameForce Consolas Plus,Gaming,Consolas,GameForce,394.85,Medio
+105,GameForce Consolas Pro,Gaming,Consolas,GameForce,302.79,Medio
+106,GameForce Consolas Pro,Gaming,Consolas,GameForce,321.98,Medio
+107,PlaySphere Consolas Lite,Gaming,Consolas,PlaySphere,339.74,Medio
+108,PlaySphere Consolas Lite,Gaming,Consolas,PlaySphere,564.26,Medio
+109,HyperX Consolas Lite,Gaming,Consolas,HyperX,385.5,Medio
+110,HyperX Consolas Plus,Gaming,Consolas,HyperX,550.12,Medio
+111,GameForce Videojuegos Pro,Gaming,Videojuegos,GameForce,60.04,Bajo
+112,GameForce Videojuegos Lite,Gaming,Videojuegos,GameForce,67.95,Bajo
+113,GameForce Videojuegos Pro,Gaming,Videojuegos,GameForce,68.17,Bajo
+114,PlaySphere Videojuegos Lite,Gaming,Videojuegos,PlaySphere,43.46,Bajo
+115,PlaySphere Videojuegos Pro,Gaming,Videojuegos,PlaySphere,62.27,Bajo
+116,HyperX Videojuegos Lite,Gaming,Videojuegos,HyperX,48.45,Bajo
+117,HyperX Videojuegos Max,Gaming,Videojuegos,HyperX,61.53,Bajo
+118,GameForce Periféricos Lite,Gaming,Periféricos,GameForce,75.49,Bajo
+119,GameForce Periféricos Lite,Gaming,Periféricos,GameForce,111.48,Bajo
+120,PlaySphere Periféricos Pro,Gaming,Periféricos,PlaySphere,87.09,Bajo
+121,PlaySphere Periféricos Lite,Gaming,Periféricos,PlaySphere,33.97,Bajo
+122,HyperX Periféricos Max,Gaming,Periféricos,HyperX,87.34,Bajo
+123,HyperX Periféricos Lite,Gaming,Periféricos,HyperX,44.54,Bajo
+124,HyperX Periféricos Plus,Gaming,Periféricos,HyperX,79.65,Bajo

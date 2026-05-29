@@ -1,0 +1,1001 @@
+id_cliente,nombre_cliente,segmento,tipo_cliente,pais,ciudad,fecha_alta
+1,Cliente 0001,Consumidor,Nuevo,Chile,Antofagasta,2023-11-28
+2,Cliente 0002,Corporativo,VIP,México,Tijuana,2023-11-14
+3,Cliente 0003,Consumidor,Nuevo,Argentina,Córdoba,2023-04-26
+4,Cliente 0004,Corporativo,Nuevo,Perú,Trujillo,2023-11-12
+5,Cliente 0005,Pyme,Recurrente,México,CDMX,2023-06-04
+6,Cliente 0006,Consumidor,Nuevo,Argentina,Córdoba,2023-08-03
+7,Cliente 0007,Pyme,Recurrente,Chile,Santiago,2023-09-02
+8,Cliente 0008,Consumidor,VIP,Chile,Valparaíso,2023-07-19
+9,Cliente 0009,Corporativo,Nuevo,Colombia,Barranquilla,2023-11-13
+10,Cliente 0010,Corporativo,Nuevo,México,Puebla,2023-06-06
+11,Cliente 0011,Corporativo,Recurrente,México,CDMX,2023-08-26
+12,Cliente 0012,Corporativo,VIP,Perú,Lima,2023-07-13
+13,Cliente 0013,Corporativo,Nuevo,Argentina,Mendoza,2023-03-03
+14,Cliente 0014,Pyme,Recurrente,Colombia,Cali,2023-09-02
+15,Cliente 0015,Corporativo,Recurrente,Colombia,Bogotá,2023-01-31
+16,Cliente 0016,Pyme,Nuevo,Perú,Cusco,2023-01-26
+17,Cliente 0017,Corporativo,Nuevo,Chile,Antofagasta,2023-08-27
+18,Cliente 0018,Pyme,VIP,Chile,Santiago,2023-03-11
+19,Cliente 0019,Consumidor,VIP,México,Monterrey,2023-04-26
+20,Cliente 0020,Pyme,Nuevo,Perú,Chiclayo,2023-06-25
+21,Cliente 0021,Pyme,Recurrente,Perú,Chiclayo,2023-06-27
+22,Cliente 0022,Pyme,Nuevo,Perú,Cusco,2023-07-04
+23,Cliente 0023,Pyme,VIP,México,Puebla,2023-05-22
+24,Cliente 0024,Corporativo,Recurrente,México,Tijuana,2023-02-14
+25,Cliente 0025,Corporativo,Nuevo,Argentina,Buenos Aires,2023-06-30
+26,Cliente 0026,Pyme,Recurrente,Chile,Antofagasta,2023-01-26
+27,Cliente 0027,Pyme,Nuevo,Chile,La Serena,2023-04-20
+28,Cliente 0028,Pyme,Nuevo,Argentina,Mendoza,2023-09-07
+29,Cliente 0029,Pyme,Recurrente,Perú,Chiclayo,2023-01-12
+30,Cliente 0030,Consumidor,Nuevo,Colombia,Medellín,2023-06-27
+31,Cliente 0031,Consumidor,Recurrente,México,CDMX,2023-11-09
+32,Cliente 0032,Corporativo,VIP,Argentina,Buenos Aires,2023-04-13
+33,Cliente 0033,Corporativo,Recurrente,Argentina,Córdoba,2023-05-20
+34,Cliente 0034,Pyme,Nuevo,México,Guadalajara,2023-01-01
+35,Cliente 0035,Consumidor,VIP,Colombia,Barranquilla,2023-08-12
+36,Cliente 0036,Pyme,Nuevo,Argentina,Mendoza,2023-11-07
+37,Cliente 0037,Corporativo,VIP,Colombia,Barranquilla,2023-09-25
+38,Cliente 0038,Corporativo,Recurrente,Argentina,La Plata,2023-02-01
+39,Cliente 0039,Pyme,Recurrente,Argentina,La Plata,2023-04-28
+40,Cliente 0040,Corporativo,Nuevo,México,Puebla,2023-04-16
+41,Cliente 0041,Pyme,Nuevo,Perú,Chiclayo,2023-03-29
+42,Cliente 0042,Pyme,Recurrente,Perú,Cusco,2023-10-24
+43,Cliente 0043,Corporativo,VIP,México,Monterrey,2023-06-14
+44,Cliente 0044,Consumidor,Recurrente,Colombia,Medellín,2023-09-16
+45,Cliente 0045,Corporativo,Recurrente,México,Guadalajara,2023-10-31
+46,Cliente 0046,Corporativo,Nuevo,Perú,Chiclayo,2023-04-08
+47,Cliente 0047,Pyme,VIP,México,Puebla,2023-05-17
+48,Cliente 0048,Corporativo,Nuevo,Colombia,Cartagena,2023-05-22
+49,Cliente 0049,Corporativo,VIP,Perú,Trujillo,2023-05-17
+50,Cliente 0050,Corporativo,Nuevo,Argentina,La Plata,2023-08-12
+51,Cliente 0051,Consumidor,Recurrente,Perú,Cusco,2023-03-29
+52,Cliente 0052,Corporativo,Nuevo,Perú,Cusco,2023-09-09
+53,Cliente 0053,Corporativo,VIP,Argentina,La Plata,2023-11-19
+54,Cliente 0054,Pyme,Recurrente,Argentina,Buenos Aires,2023-10-21
+55,Cliente 0055,Consumidor,Recurrente,México,Puebla,2023-08-31
+56,Cliente 0056,Corporativo,Recurrente,Chile,Concepción,2023-08-16
+57,Cliente 0057,Corporativo,Recurrente,Perú,Cusco,2023-07-13
+58,Cliente 0058,Pyme,VIP,Colombia,Barranquilla,2023-11-23
+59,Cliente 0059,Pyme,Nuevo,Colombia,Cali,2023-08-10
+60,Cliente 0060,Consumidor,Nuevo,Colombia,Bogotá,2023-07-29
+61,Cliente 0061,Consumidor,Recurrente,Argentina,Córdoba,2023-08-02
+62,Cliente 0062,Corporativo,VIP,Colombia,Cartagena,2023-08-13
+63,Cliente 0063,Pyme,VIP,Perú,Trujillo,2023-09-08
+64,Cliente 0064,Consumidor,VIP,Colombia,Medellín,2023-06-26
+65,Cliente 0065,Pyme,Recurrente,Colombia,Cali,2023-02-11
+66,Cliente 0066,Pyme,VIP,Chile,Valparaíso,2023-10-25
+67,Cliente 0067,Pyme,VIP,México,CDMX,2023-07-01
+68,Cliente 0068,Corporativo,VIP,Colombia,Cartagena,2023-11-11
+69,Cliente 0069,Pyme,VIP,Chile,Concepción,2023-10-28
+70,Cliente 0070,Corporativo,Nuevo,Perú,Lima,2023-05-01
+71,Cliente 0071,Corporativo,VIP,Chile,Concepción,2023-01-11
+72,Cliente 0072,Pyme,VIP,México,Puebla,2023-09-03
+73,Cliente 0073,Corporativo,Recurrente,Perú,Chiclayo,2023-03-02
+74,Cliente 0074,Corporativo,Nuevo,Chile,Antofagasta,2023-07-18
+75,Cliente 0075,Consumidor,Recurrente,Colombia,Cali,2023-04-16
+76,Cliente 0076,Corporativo,Nuevo,Argentina,La Plata,2023-05-22
+77,Cliente 0077,Corporativo,Nuevo,Chile,Concepción,2023-08-31
+78,Cliente 0078,Corporativo,VIP,Perú,Trujillo,2023-06-11
+79,Cliente 0079,Pyme,Nuevo,Perú,Chiclayo,2023-11-27
+80,Cliente 0080,Corporativo,VIP,Colombia,Medellín,2023-05-08
+81,Cliente 0081,Pyme,Recurrente,México,Puebla,2023-01-06
+82,Cliente 0082,Corporativo,Nuevo,Chile,Santiago,2023-10-16
+83,Cliente 0083,Pyme,VIP,Chile,Valparaíso,2023-06-29
+84,Cliente 0084,Pyme,Recurrente,Perú,Cusco,2023-02-22
+85,Cliente 0085,Corporativo,VIP,Chile,Antofagasta,2023-06-16
+86,Cliente 0086,Corporativo,Nuevo,Chile,Concepción,2023-06-29
+87,Cliente 0087,Consumidor,VIP,Colombia,Medellín,2023-06-24
+88,Cliente 0088,Consumidor,VIP,Argentina,Córdoba,2023-08-26
+89,Cliente 0089,Pyme,VIP,Chile,Concepción,2023-02-04
+90,Cliente 0090,Corporativo,Nuevo,Perú,Lima,2023-08-25
+91,Cliente 0091,Consumidor,VIP,Perú,Arequipa,2023-07-01
+92,Cliente 0092,Consumidor,Nuevo,Argentina,Córdoba,2023-07-15
+93,Cliente 0093,Pyme,Recurrente,Argentina,Rosario,2023-09-29
+94,Cliente 0094,Corporativo,Recurrente,Colombia,Bogotá,2023-02-12
+95,Cliente 0095,Consumidor,Nuevo,Chile,La Serena,2023-06-11
+96,Cliente 0096,Consumidor,Recurrente,Perú,Cusco,2023-10-05
+97,Cliente 0097,Pyme,VIP,Chile,Santiago,2023-02-10
+98,Cliente 0098,Pyme,Recurrente,Colombia,Medellín,2023-09-17
+99,Cliente 0099,Pyme,Recurrente,Colombia,Medellín,2023-10-03
+100,Cliente 0100,Consumidor,VIP,Argentina,La Plata,2023-01-20
+101,Cliente 0101,Corporativo,VIP,Chile,La Serena,2023-04-20
+102,Cliente 0102,Pyme,Nuevo,Chile,Concepción,2023-02-14
+103,Cliente 0103,Pyme,Nuevo,Argentina,Buenos Aires,2023-08-18
+104,Cliente 0104,Consumidor,Nuevo,Perú,Lima,2023-09-13
+105,Cliente 0105,Consumidor,Recurrente,Argentina,Buenos Aires,2023-09-13
+106,Cliente 0106,Corporativo,Nuevo,Chile,Antofagasta,2023-04-06
+107,Cliente 0107,Pyme,Recurrente,México,Monterrey,2023-07-11
+108,Cliente 0108,Pyme,VIP,Colombia,Medellín,2023-07-20
+109,Cliente 0109,Pyme,Nuevo,México,Puebla,2023-10-05
+110,Cliente 0110,Consumidor,Nuevo,México,Monterrey,2023-09-21
+111,Cliente 0111,Pyme,VIP,México,Monterrey,2023-02-01
+112,Cliente 0112,Corporativo,VIP,Perú,Cusco,2023-09-30
+113,Cliente 0113,Pyme,VIP,Perú,Cusco,2023-07-16
+114,Cliente 0114,Pyme,Nuevo,Chile,La Serena,2023-10-22
+115,Cliente 0115,Corporativo,Nuevo,Chile,Concepción,2023-01-27
+116,Cliente 0116,Pyme,Nuevo,Colombia,Medellín,2023-02-11
+117,Cliente 0117,Consumidor,Recurrente,Perú,Chiclayo,2023-11-12
+118,Cliente 0118,Consumidor,VIP,Argentina,Mendoza,2023-07-13
+119,Cliente 0119,Corporativo,Recurrente,Chile,La Serena,2023-10-17
+120,Cliente 0120,Pyme,Nuevo,Chile,Concepción,2023-06-21
+121,Cliente 0121,Pyme,Recurrente,México,Monterrey,2023-05-06
+122,Cliente 0122,Consumidor,Recurrente,Perú,Cusco,2023-02-24
+123,Cliente 0123,Corporativo,Nuevo,Colombia,Cali,2023-07-26
+124,Cliente 0124,Pyme,VIP,Chile,Antofagasta,2023-12-02
+125,Cliente 0125,Consumidor,VIP,Chile,La Serena,2023-11-05
+126,Cliente 0126,Pyme,Recurrente,Perú,Chiclayo,2023-03-22
+127,Cliente 0127,Pyme,Nuevo,Colombia,Medellín,2023-07-19
+128,Cliente 0128,Consumidor,Nuevo,Perú,Cusco,2023-03-29
+129,Cliente 0129,Corporativo,VIP,Argentina,Córdoba,2023-09-12
+130,Cliente 0130,Consumidor,Nuevo,Colombia,Cartagena,2023-05-08
+131,Cliente 0131,Pyme,Nuevo,Colombia,Barranquilla,2023-10-03
+132,Cliente 0132,Pyme,Recurrente,Chile,Concepción,2023-03-17
+133,Cliente 0133,Consumidor,Recurrente,Chile,La Serena,2023-04-05
+134,Cliente 0134,Consumidor,VIP,Argentina,Córdoba,2023-05-20
+135,Cliente 0135,Corporativo,Recurrente,Argentina,Córdoba,2023-10-28
+136,Cliente 0136,Consumidor,Recurrente,Perú,Chiclayo,2023-07-19
+137,Cliente 0137,Pyme,Recurrente,Perú,Chiclayo,2023-02-09
+138,Cliente 0138,Corporativo,Recurrente,México,Puebla,2023-03-02
+139,Cliente 0139,Corporativo,Recurrente,Perú,Chiclayo,2023-02-27
+140,Cliente 0140,Pyme,Recurrente,Perú,Arequipa,2023-08-02
+141,Cliente 0141,Corporativo,VIP,México,Puebla,2023-11-10
+142,Cliente 0142,Pyme,VIP,Chile,La Serena,2023-05-19
+143,Cliente 0143,Consumidor,VIP,México,Puebla,2023-11-14
+144,Cliente 0144,Corporativo,Nuevo,Argentina,Rosario,2023-10-12
+145,Cliente 0145,Pyme,Nuevo,Argentina,Mendoza,2023-11-25
+146,Cliente 0146,Corporativo,Recurrente,Chile,Valparaíso,2023-10-25
+147,Cliente 0147,Pyme,Nuevo,Perú,Chiclayo,2023-05-13
+148,Cliente 0148,Corporativo,VIP,Perú,Chiclayo,2023-05-22
+149,Cliente 0149,Pyme,Nuevo,Chile,Antofagasta,2023-11-14
+150,Cliente 0150,Pyme,Nuevo,México,Monterrey,2023-08-08
+151,Cliente 0151,Pyme,Nuevo,Chile,Santiago,2023-01-12
+152,Cliente 0152,Consumidor,Nuevo,Chile,Valparaíso,2023-07-02
+153,Cliente 0153,Corporativo,Recurrente,Perú,Lima,2023-07-05
+154,Cliente 0154,Pyme,Recurrente,Chile,Valparaíso,2023-07-30
+155,Cliente 0155,Consumidor,Nuevo,Argentina,Córdoba,2023-09-06
+156,Cliente 0156,Pyme,Nuevo,Argentina,Mendoza,2023-01-19
+157,Cliente 0157,Consumidor,Recurrente,Chile,Antofagasta,2023-09-20
+158,Cliente 0158,Pyme,Nuevo,Perú,Cusco,2023-07-25
+159,Cliente 0159,Consumidor,Nuevo,Chile,Concepción,2023-02-26
+160,Cliente 0160,Corporativo,VIP,Chile,Concepción,2023-02-05
+161,Cliente 0161,Corporativo,Nuevo,Chile,Concepción,2023-04-13
+162,Cliente 0162,Consumidor,Recurrente,Chile,La Serena,2023-10-09
+163,Cliente 0163,Corporativo,VIP,Argentina,Rosario,2023-02-11
+164,Cliente 0164,Corporativo,Nuevo,Perú,Lima,2023-05-14
+165,Cliente 0165,Pyme,Recurrente,Argentina,Buenos Aires,2023-01-26
+166,Cliente 0166,Corporativo,Nuevo,Perú,Arequipa,2023-01-26
+167,Cliente 0167,Pyme,VIP,México,Tijuana,2023-07-27
+168,Cliente 0168,Pyme,Nuevo,México,CDMX,2023-01-15
+169,Cliente 0169,Pyme,Recurrente,Perú,Cusco,2023-11-15
+170,Cliente 0170,Corporativo,VIP,México,CDMX,2023-07-04
+171,Cliente 0171,Consumidor,VIP,Chile,Valparaíso,2023-08-22
+172,Cliente 0172,Corporativo,Nuevo,Perú,Chiclayo,2023-03-21
+173,Cliente 0173,Pyme,Recurrente,Perú,Cusco,2023-07-04
+174,Cliente 0174,Consumidor,Nuevo,Colombia,Barranquilla,2023-10-25
+175,Cliente 0175,Consumidor,Recurrente,Chile,Antofagasta,2023-05-29
+176,Cliente 0176,Consumidor,Recurrente,Colombia,Cali,2023-03-03
+177,Cliente 0177,Corporativo,VIP,Perú,Trujillo,2023-02-06
+178,Cliente 0178,Corporativo,Nuevo,Perú,Lima,2023-08-05
+179,Cliente 0179,Pyme,Nuevo,Argentina,La Plata,2023-06-18
+180,Cliente 0180,Pyme,Recurrente,Colombia,Barranquilla,2023-07-01
+181,Cliente 0181,Consumidor,Recurrente,Colombia,Medellín,2023-11-09
+182,Cliente 0182,Consumidor,VIP,Chile,Santiago,2023-10-14
+183,Cliente 0183,Corporativo,VIP,México,Puebla,2023-04-14
+184,Cliente 0184,Pyme,VIP,Argentina,Mendoza,2023-02-05
+185,Cliente 0185,Consumidor,Recurrente,México,Puebla,2023-01-01
+186,Cliente 0186,Consumidor,VIP,Argentina,Mendoza,2023-07-12
+187,Cliente 0187,Corporativo,Nuevo,Perú,Arequipa,2023-04-19
+188,Cliente 0188,Pyme,VIP,Perú,Lima,2023-05-28
+189,Cliente 0189,Corporativo,Nuevo,Perú,Lima,2023-05-13
+190,Cliente 0190,Pyme,Nuevo,Colombia,Barranquilla,2023-10-17
+191,Cliente 0191,Corporativo,Nuevo,Argentina,Buenos Aires,2023-11-07
+192,Cliente 0192,Consumidor,VIP,México,Tijuana,2023-08-19
+193,Cliente 0193,Consumidor,Recurrente,México,Tijuana,2023-08-14
+194,Cliente 0194,Corporativo,Nuevo,México,Tijuana,2023-12-01
+195,Cliente 0195,Consumidor,Nuevo,México,Tijuana,2023-07-27
+196,Cliente 0196,Corporativo,Nuevo,Colombia,Medellín,2023-11-25
+197,Cliente 0197,Consumidor,Recurrente,Argentina,Rosario,2023-11-24
+198,Cliente 0198,Pyme,Nuevo,Colombia,Medellín,2023-05-01
+199,Cliente 0199,Corporativo,VIP,Colombia,Barranquilla,2023-04-17
+200,Cliente 0200,Pyme,Nuevo,Argentina,Buenos Aires,2023-04-15
+201,Cliente 0201,Corporativo,Recurrente,Argentina,Buenos Aires,2023-03-11
+202,Cliente 0202,Corporativo,Recurrente,Colombia,Bogotá,2023-04-01
+203,Cliente 0203,Consumidor,Nuevo,Colombia,Barranquilla,2023-04-19
+204,Cliente 0204,Consumidor,Nuevo,Perú,Chiclayo,2023-09-18
+205,Cliente 0205,Pyme,VIP,Perú,Chiclayo,2023-01-12
+206,Cliente 0206,Pyme,Recurrente,Perú,Cusco,2023-01-31
+207,Cliente 0207,Corporativo,Nuevo,Chile,Antofagasta,2023-01-27
+208,Cliente 0208,Corporativo,Recurrente,Colombia,Cartagena,2023-08-14
+209,Cliente 0209,Corporativo,Recurrente,México,Puebla,2023-06-12
+210,Cliente 0210,Corporativo,Recurrente,Chile,Santiago,2023-06-25
+211,Cliente 0211,Pyme,Recurrente,Perú,Trujillo,2023-09-15
+212,Cliente 0212,Consumidor,Recurrente,Colombia,Bogotá,2023-10-20
+213,Cliente 0213,Pyme,Nuevo,Colombia,Cali,2023-09-27
+214,Cliente 0214,Corporativo,VIP,Argentina,La Plata,2023-02-18
+215,Cliente 0215,Pyme,Recurrente,Colombia,Barranquilla,2023-06-04
+216,Cliente 0216,Corporativo,Recurrente,Colombia,Cali,2023-01-29
+217,Cliente 0217,Consumidor,Nuevo,Colombia,Cartagena,2023-03-18
+218,Cliente 0218,Corporativo,VIP,Chile,Valparaíso,2023-10-08
+219,Cliente 0219,Pyme,Nuevo,Perú,Lima,2023-07-13
+220,Cliente 0220,Pyme,VIP,Chile,Antofagasta,2023-01-18
+221,Cliente 0221,Pyme,VIP,Argentina,Buenos Aires,2023-01-25
+222,Cliente 0222,Corporativo,VIP,Perú,Lima,2023-09-01
+223,Cliente 0223,Consumidor,Nuevo,Perú,Trujillo,2023-06-06
+224,Cliente 0224,Consumidor,Nuevo,México,Tijuana,2023-05-11
+225,Cliente 0225,Consumidor,Recurrente,Colombia,Bogotá,2023-03-06
+226,Cliente 0226,Consumidor,Recurrente,Chile,La Serena,2023-06-11
+227,Cliente 0227,Pyme,Nuevo,Perú,Trujillo,2023-02-15
+228,Cliente 0228,Pyme,Nuevo,Colombia,Medellín,2023-09-13
+229,Cliente 0229,Pyme,Recurrente,Colombia,Cali,2023-04-20
+230,Cliente 0230,Corporativo,Recurrente,Chile,Antofagasta,2023-04-20
+231,Cliente 0231,Corporativo,Recurrente,México,Tijuana,2023-10-05
+232,Cliente 0232,Corporativo,VIP,Colombia,Cali,2023-02-02
+233,Cliente 0233,Corporativo,VIP,Perú,Lima,2023-08-12
+234,Cliente 0234,Corporativo,Nuevo,Colombia,Bogotá,2023-08-20
+235,Cliente 0235,Corporativo,Nuevo,México,Monterrey,2023-07-07
+236,Cliente 0236,Consumidor,Nuevo,Colombia,Barranquilla,2023-04-26
+237,Cliente 0237,Pyme,VIP,Chile,Antofagasta,2023-08-07
+238,Cliente 0238,Pyme,Nuevo,Perú,Lima,2023-05-13
+239,Cliente 0239,Consumidor,Recurrente,Chile,Santiago,2023-04-11
+240,Cliente 0240,Corporativo,VIP,Argentina,Mendoza,2023-02-12
+241,Cliente 0241,Corporativo,Nuevo,Chile,Concepción,2023-10-05
+242,Cliente 0242,Corporativo,VIP,Perú,Arequipa,2023-01-20
+243,Cliente 0243,Consumidor,Nuevo,Perú,Lima,2023-04-23
+244,Cliente 0244,Pyme,Nuevo,Chile,Antofagasta,2023-05-11
+245,Cliente 0245,Consumidor,Recurrente,Chile,Concepción,2023-06-12
+246,Cliente 0246,Pyme,Nuevo,México,CDMX,2023-03-16
+247,Cliente 0247,Corporativo,Recurrente,Argentina,La Plata,2023-08-25
+248,Cliente 0248,Consumidor,Recurrente,México,Guadalajara,2023-10-11
+249,Cliente 0249,Consumidor,VIP,México,Guadalajara,2023-01-28
+250,Cliente 0250,Corporativo,Recurrente,Colombia,Medellín,2023-01-15
+251,Cliente 0251,Pyme,VIP,Argentina,La Plata,2023-04-17
+252,Cliente 0252,Corporativo,Nuevo,Argentina,Rosario,2023-01-15
+253,Cliente 0253,Corporativo,VIP,Chile,Santiago,2023-04-06
+254,Cliente 0254,Consumidor,Recurrente,Perú,Trujillo,2023-02-03
+255,Cliente 0255,Corporativo,Recurrente,Argentina,Buenos Aires,2023-06-27
+256,Cliente 0256,Corporativo,Nuevo,Colombia,Bogotá,2023-05-28
+257,Cliente 0257,Pyme,Recurrente,Colombia,Cartagena,2023-02-01
+258,Cliente 0258,Pyme,Nuevo,Chile,Antofagasta,2023-02-22
+259,Cliente 0259,Consumidor,Recurrente,Chile,Antofagasta,2023-01-03
+260,Cliente 0260,Consumidor,Nuevo,Argentina,Mendoza,2023-03-21
+261,Cliente 0261,Pyme,Nuevo,Chile,Santiago,2023-06-10
+262,Cliente 0262,Consumidor,VIP,Argentina,Córdoba,2023-11-12
+263,Cliente 0263,Pyme,VIP,Chile,La Serena,2023-03-09
+264,Cliente 0264,Corporativo,Recurrente,México,Monterrey,2023-05-26
+265,Cliente 0265,Consumidor,VIP,Chile,Concepción,2023-01-30
+266,Cliente 0266,Consumidor,VIP,Perú,Lima,2023-06-17
+267,Cliente 0267,Pyme,VIP,Chile,Concepción,2023-07-26
+268,Cliente 0268,Consumidor,VIP,Argentina,Córdoba,2023-06-15
+269,Cliente 0269,Pyme,VIP,México,Monterrey,2023-06-27
+270,Cliente 0270,Pyme,Nuevo,Chile,Valparaíso,2023-02-01
+271,Cliente 0271,Pyme,Recurrente,Perú,Chiclayo,2023-05-24
+272,Cliente 0272,Pyme,VIP,México,Tijuana,2023-10-16
+273,Cliente 0273,Consumidor,Recurrente,Chile,Antofagasta,2023-05-31
+274,Cliente 0274,Corporativo,Recurrente,Perú,Arequipa,2023-08-15
+275,Cliente 0275,Consumidor,Nuevo,México,Guadalajara,2023-09-23
+276,Cliente 0276,Pyme,VIP,Perú,Lima,2023-03-18
+277,Cliente 0277,Pyme,Nuevo,Argentina,Buenos Aires,2023-06-13
+278,Cliente 0278,Consumidor,Nuevo,Argentina,Mendoza,2023-09-15
+279,Cliente 0279,Consumidor,Recurrente,Argentina,Córdoba,2023-04-22
+280,Cliente 0280,Pyme,Recurrente,Perú,Arequipa,2023-04-19
+281,Cliente 0281,Consumidor,Recurrente,Chile,Valparaíso,2023-03-04
+282,Cliente 0282,Pyme,VIP,Chile,Valparaíso,2023-05-28
+283,Cliente 0283,Corporativo,VIP,Chile,La Serena,2023-07-11
+284,Cliente 0284,Consumidor,VIP,Argentina,Mendoza,2023-09-11
+285,Cliente 0285,Pyme,Recurrente,México,Monterrey,2023-11-06
+286,Cliente 0286,Pyme,VIP,Perú,Chiclayo,2023-10-11
+287,Cliente 0287,Consumidor,Recurrente,Colombia,Cali,2023-10-21
+288,Cliente 0288,Corporativo,Nuevo,Chile,Antofagasta,2023-09-18
+289,Cliente 0289,Consumidor,Recurrente,México,Puebla,2023-06-07
+290,Cliente 0290,Corporativo,Nuevo,Colombia,Barranquilla,2023-03-20
+291,Cliente 0291,Consumidor,Nuevo,Chile,Santiago,2023-05-25
+292,Cliente 0292,Corporativo,Nuevo,Perú,Lima,2023-01-04
+293,Cliente 0293,Corporativo,VIP,México,CDMX,2023-07-09
+294,Cliente 0294,Pyme,Nuevo,México,Puebla,2023-04-17
+295,Cliente 0295,Consumidor,Nuevo,Colombia,Bogotá,2023-07-24
+296,Cliente 0296,Corporativo,Nuevo,Argentina,La Plata,2023-03-07
+297,Cliente 0297,Consumidor,Nuevo,Perú,Arequipa,2023-07-01
+298,Cliente 0298,Pyme,Recurrente,México,Puebla,2023-01-09
+299,Cliente 0299,Pyme,VIP,Colombia,Bogotá,2023-03-22
+300,Cliente 0300,Consumidor,VIP,Colombia,Cartagena,2023-02-11
+301,Cliente 0301,Consumidor,VIP,México,Monterrey,2023-04-27
+302,Cliente 0302,Corporativo,Nuevo,Perú,Arequipa,2023-02-13
+303,Cliente 0303,Consumidor,VIP,Colombia,Cartagena,2023-06-01
+304,Cliente 0304,Pyme,Nuevo,Argentina,La Plata,2023-03-18
+305,Cliente 0305,Pyme,Recurrente,Chile,La Serena,2023-11-10
+306,Cliente 0306,Corporativo,Nuevo,Perú,Trujillo,2023-11-24
+307,Cliente 0307,Consumidor,VIP,Perú,Arequipa,2023-01-15
+308,Cliente 0308,Corporativo,VIP,Perú,Arequipa,2023-11-10
+309,Cliente 0309,Pyme,Recurrente,Perú,Arequipa,2023-04-09
+310,Cliente 0310,Pyme,Recurrente,México,Guadalajara,2023-10-31
+311,Cliente 0311,Consumidor,Nuevo,Colombia,Cali,2023-08-21
+312,Cliente 0312,Pyme,Recurrente,Colombia,Cali,2023-06-27
+313,Cliente 0313,Consumidor,VIP,Argentina,Mendoza,2023-07-26
+314,Cliente 0314,Consumidor,VIP,México,Monterrey,2023-06-03
+315,Cliente 0315,Corporativo,Recurrente,Perú,Trujillo,2023-09-30
+316,Cliente 0316,Corporativo,Nuevo,Chile,La Serena,2023-05-19
+317,Cliente 0317,Pyme,Recurrente,Chile,La Serena,2023-05-28
+318,Cliente 0318,Corporativo,VIP,Colombia,Barranquilla,2023-10-23
+319,Cliente 0319,Corporativo,Nuevo,México,Tijuana,2023-07-05
+320,Cliente 0320,Corporativo,Recurrente,Colombia,Cali,2023-07-04
+321,Cliente 0321,Pyme,Recurrente,Argentina,Mendoza,2023-09-08
+322,Cliente 0322,Pyme,Recurrente,Perú,Cusco,2023-11-11
+323,Cliente 0323,Pyme,Nuevo,Argentina,Mendoza,2023-07-15
+324,Cliente 0324,Pyme,VIP,Colombia,Barranquilla,2023-05-30
+325,Cliente 0325,Pyme,VIP,México,CDMX,2023-09-20
+326,Cliente 0326,Consumidor,Nuevo,Chile,Santiago,2023-09-29
+327,Cliente 0327,Pyme,Nuevo,Perú,Trujillo,2023-05-20
+328,Cliente 0328,Corporativo,Recurrente,Argentina,Córdoba,2023-04-16
+329,Cliente 0329,Consumidor,VIP,Chile,Santiago,2023-02-12
+330,Cliente 0330,Pyme,Recurrente,Perú,Cusco,2023-06-25
+331,Cliente 0331,Pyme,Nuevo,México,CDMX,2023-11-19
+332,Cliente 0332,Pyme,Nuevo,Chile,Antofagasta,2023-05-18
+333,Cliente 0333,Consumidor,VIP,Perú,Trujillo,2023-04-18
+334,Cliente 0334,Consumidor,Nuevo,Perú,Cusco,2023-08-22
+335,Cliente 0335,Pyme,Recurrente,Colombia,Barranquilla,2023-09-05
+336,Cliente 0336,Pyme,Nuevo,Colombia,Cali,2023-06-08
+337,Cliente 0337,Corporativo,Nuevo,Argentina,La Plata,2023-07-07
+338,Cliente 0338,Consumidor,Nuevo,México,Monterrey,2023-03-17
+339,Cliente 0339,Corporativo,Nuevo,México,Guadalajara,2023-08-03
+340,Cliente 0340,Corporativo,Recurrente,Perú,Chiclayo,2023-02-12
+341,Cliente 0341,Consumidor,Nuevo,Argentina,Córdoba,2023-01-23
+342,Cliente 0342,Pyme,Recurrente,Perú,Cusco,2023-04-01
+343,Cliente 0343,Consumidor,Recurrente,Chile,Antofagasta,2023-10-26
+344,Cliente 0344,Pyme,VIP,Colombia,Barranquilla,2023-04-08
+345,Cliente 0345,Pyme,VIP,Perú,Arequipa,2023-02-23
+346,Cliente 0346,Pyme,Nuevo,México,Guadalajara,2023-04-25
+347,Cliente 0347,Corporativo,Nuevo,Colombia,Cartagena,2023-09-15
+348,Cliente 0348,Corporativo,VIP,México,Monterrey,2023-08-09
+349,Cliente 0349,Consumidor,VIP,Perú,Lima,2023-07-27
+350,Cliente 0350,Pyme,Recurrente,Argentina,Rosario,2023-09-29
+351,Cliente 0351,Pyme,VIP,Argentina,La Plata,2023-10-16
+352,Cliente 0352,Consumidor,Nuevo,México,Tijuana,2023-02-08
+353,Cliente 0353,Pyme,Nuevo,Argentina,La Plata,2023-06-13
+354,Cliente 0354,Pyme,VIP,Colombia,Bogotá,2023-11-09
+355,Cliente 0355,Corporativo,VIP,Perú,Arequipa,2023-02-13
+356,Cliente 0356,Pyme,Recurrente,Colombia,Barranquilla,2023-01-15
+357,Cliente 0357,Pyme,Recurrente,Perú,Cusco,2023-07-30
+358,Cliente 0358,Pyme,Nuevo,Perú,Cusco,2023-10-26
+359,Cliente 0359,Corporativo,Recurrente,México,Puebla,2023-05-04
+360,Cliente 0360,Consumidor,Recurrente,México,Monterrey,2023-01-26
+361,Cliente 0361,Consumidor,Recurrente,Perú,Trujillo,2023-05-12
+362,Cliente 0362,Corporativo,Nuevo,Argentina,La Plata,2023-10-09
+363,Cliente 0363,Corporativo,Nuevo,Chile,Santiago,2023-07-19
+364,Cliente 0364,Corporativo,Recurrente,México,CDMX,2023-11-07
+365,Cliente 0365,Consumidor,Recurrente,Argentina,Mendoza,2023-07-28
+366,Cliente 0366,Consumidor,Recurrente,Argentina,Rosario,2023-08-27
+367,Cliente 0367,Corporativo,Recurrente,Argentina,Mendoza,2023-03-22
+368,Cliente 0368,Pyme,Recurrente,Colombia,Bogotá,2023-05-15
+369,Cliente 0369,Corporativo,Nuevo,México,Guadalajara,2023-02-07
+370,Cliente 0370,Pyme,VIP,Colombia,Cali,2023-03-24
+371,Cliente 0371,Consumidor,Nuevo,Chile,Concepción,2023-03-03
+372,Cliente 0372,Pyme,Recurrente,Chile,Valparaíso,2023-07-20
+373,Cliente 0373,Corporativo,Nuevo,Chile,Concepción,2023-11-09
+374,Cliente 0374,Corporativo,VIP,Argentina,La Plata,2023-08-25
+375,Cliente 0375,Pyme,Recurrente,Perú,Lima,2023-05-19
+376,Cliente 0376,Pyme,VIP,Argentina,Rosario,2023-01-17
+377,Cliente 0377,Corporativo,Recurrente,Colombia,Medellín,2023-10-14
+378,Cliente 0378,Consumidor,Nuevo,Perú,Chiclayo,2023-05-29
+379,Cliente 0379,Pyme,Nuevo,Argentina,La Plata,2023-05-11
+380,Cliente 0380,Pyme,Recurrente,Colombia,Bogotá,2023-09-23
+381,Cliente 0381,Consumidor,VIP,Chile,Antofagasta,2023-04-13
+382,Cliente 0382,Pyme,Recurrente,Argentina,Córdoba,2023-06-18
+383,Cliente 0383,Pyme,Recurrente,México,Puebla,2023-01-21
+384,Cliente 0384,Pyme,VIP,Argentina,Rosario,2023-03-18
+385,Cliente 0385,Corporativo,Nuevo,Chile,Antofagasta,2023-07-02
+386,Cliente 0386,Corporativo,VIP,Perú,Trujillo,2023-10-07
+387,Cliente 0387,Corporativo,Recurrente,Perú,Lima,2023-01-31
+388,Cliente 0388,Pyme,Nuevo,Argentina,La Plata,2023-08-08
+389,Cliente 0389,Pyme,VIP,Argentina,Mendoza,2023-09-06
+390,Cliente 0390,Pyme,Nuevo,Argentina,Mendoza,2023-09-18
+391,Cliente 0391,Consumidor,Nuevo,Colombia,Cartagena,2023-10-07
+392,Cliente 0392,Consumidor,Recurrente,Chile,Concepción,2023-05-02
+393,Cliente 0393,Pyme,Recurrente,México,Puebla,2023-03-21
+394,Cliente 0394,Consumidor,VIP,Colombia,Medellín,2023-03-12
+395,Cliente 0395,Corporativo,Recurrente,Perú,Cusco,2023-03-08
+396,Cliente 0396,Corporativo,VIP,México,Puebla,2023-03-05
+397,Cliente 0397,Corporativo,Nuevo,Perú,Trujillo,2023-01-24
+398,Cliente 0398,Corporativo,Nuevo,México,Monterrey,2023-02-20
+399,Cliente 0399,Pyme,VIP,Perú,Trujillo,2023-08-18
+400,Cliente 0400,Corporativo,VIP,Chile,Concepción,2023-04-01
+401,Cliente 0401,Pyme,VIP,Perú,Trujillo,2023-10-01
+402,Cliente 0402,Corporativo,Nuevo,Argentina,Mendoza,2023-05-14
+403,Cliente 0403,Pyme,Nuevo,Perú,Lima,2023-07-08
+404,Cliente 0404,Corporativo,VIP,Perú,Cusco,2023-01-01
+405,Cliente 0405,Pyme,Recurrente,Chile,Valparaíso,2023-08-21
+406,Cliente 0406,Consumidor,VIP,Argentina,Rosario,2023-09-23
+407,Cliente 0407,Consumidor,VIP,Argentina,Córdoba,2023-07-31
+408,Cliente 0408,Consumidor,Nuevo,Argentina,Córdoba,2023-01-10
+409,Cliente 0409,Pyme,Recurrente,Colombia,Barranquilla,2023-06-16
+410,Cliente 0410,Pyme,Nuevo,Colombia,Medellín,2023-11-30
+411,Cliente 0411,Pyme,Nuevo,Chile,La Serena,2023-04-02
+412,Cliente 0412,Pyme,Nuevo,Perú,Trujillo,2023-07-09
+413,Cliente 0413,Pyme,VIP,Colombia,Cartagena,2023-08-06
+414,Cliente 0414,Consumidor,Nuevo,Colombia,Medellín,2023-05-03
+415,Cliente 0415,Pyme,Recurrente,Chile,La Serena,2023-08-29
+416,Cliente 0416,Pyme,VIP,Colombia,Bogotá,2023-07-03
+417,Cliente 0417,Corporativo,VIP,Colombia,Cali,2023-07-10
+418,Cliente 0418,Consumidor,VIP,Argentina,La Plata,2023-03-25
+419,Cliente 0419,Consumidor,Recurrente,Chile,Concepción,2023-08-26
+420,Cliente 0420,Corporativo,VIP,México,Puebla,2023-01-05
+421,Cliente 0421,Corporativo,VIP,México,CDMX,2023-06-13
+422,Cliente 0422,Pyme,Recurrente,México,Guadalajara,2023-01-24
+423,Cliente 0423,Consumidor,Recurrente,Chile,Antofagasta,2023-06-18
+424,Cliente 0424,Corporativo,Recurrente,Colombia,Medellín,2023-09-22
+425,Cliente 0425,Corporativo,Nuevo,México,CDMX,2023-07-22
+426,Cliente 0426,Corporativo,VIP,Chile,Concepción,2023-06-17
+427,Cliente 0427,Pyme,Recurrente,Argentina,Buenos Aires,2023-07-22
+428,Cliente 0428,Corporativo,Recurrente,México,CDMX,2023-10-03
+429,Cliente 0429,Pyme,Recurrente,México,Puebla,2023-03-20
+430,Cliente 0430,Pyme,Nuevo,Colombia,Cali,2023-05-28
+431,Cliente 0431,Consumidor,Recurrente,México,Guadalajara,2023-04-02
+432,Cliente 0432,Pyme,VIP,Argentina,Rosario,2023-05-04
+433,Cliente 0433,Consumidor,VIP,Chile,Antofagasta,2023-08-13
+434,Cliente 0434,Corporativo,VIP,Argentina,Buenos Aires,2023-03-08
+435,Cliente 0435,Consumidor,Nuevo,Perú,Lima,2023-02-17
+436,Cliente 0436,Pyme,VIP,Argentina,La Plata,2023-08-21
+437,Cliente 0437,Pyme,Recurrente,México,Guadalajara,2023-06-18
+438,Cliente 0438,Corporativo,Nuevo,Colombia,Medellín,2023-02-07
+439,Cliente 0439,Corporativo,Nuevo,Argentina,Mendoza,2023-11-04
+440,Cliente 0440,Pyme,Nuevo,Argentina,Mendoza,2023-04-13
+441,Cliente 0441,Pyme,Nuevo,Argentina,Mendoza,2023-06-28
+442,Cliente 0442,Pyme,Nuevo,Chile,Concepción,2023-12-01
+443,Cliente 0443,Corporativo,Recurrente,Argentina,Buenos Aires,2023-11-09
+444,Cliente 0444,Consumidor,Recurrente,Colombia,Cartagena,2023-11-02
+445,Cliente 0445,Consumidor,Nuevo,Colombia,Cali,2023-05-07
+446,Cliente 0446,Corporativo,Recurrente,Chile,Concepción,2023-05-21
+447,Cliente 0447,Consumidor,VIP,Chile,Santiago,2023-03-01
+448,Cliente 0448,Pyme,Recurrente,Perú,Lima,2023-09-02
+449,Cliente 0449,Consumidor,Nuevo,Argentina,Córdoba,2023-08-10
+450,Cliente 0450,Corporativo,VIP,Perú,Cusco,2023-02-27
+451,Cliente 0451,Corporativo,Recurrente,Chile,Valparaíso,2023-07-29
+452,Cliente 0452,Pyme,Nuevo,México,Monterrey,2023-08-28
+453,Cliente 0453,Consumidor,Nuevo,Colombia,Barranquilla,2023-01-22
+454,Cliente 0454,Pyme,Nuevo,México,CDMX,2023-10-12
+455,Cliente 0455,Consumidor,VIP,Chile,Antofagasta,2023-11-08
+456,Cliente 0456,Consumidor,VIP,Colombia,Barranquilla,2023-04-22
+457,Cliente 0457,Pyme,Recurrente,México,CDMX,2023-09-22
+458,Cliente 0458,Pyme,VIP,México,Tijuana,2023-06-22
+459,Cliente 0459,Consumidor,VIP,Perú,Arequipa,2023-07-01
+460,Cliente 0460,Corporativo,Recurrente,Argentina,Córdoba,2023-05-05
+461,Cliente 0461,Pyme,Nuevo,Colombia,Cartagena,2023-02-03
+462,Cliente 0462,Consumidor,Recurrente,Chile,Antofagasta,2023-03-24
+463,Cliente 0463,Pyme,Recurrente,Chile,Antofagasta,2023-06-22
+464,Cliente 0464,Corporativo,Nuevo,Chile,Valparaíso,2023-07-02
+465,Cliente 0465,Consumidor,Recurrente,Argentina,Mendoza,2023-08-01
+466,Cliente 0466,Pyme,Recurrente,México,Puebla,2023-11-03
+467,Cliente 0467,Consumidor,Recurrente,Chile,Antofagasta,2023-03-06
+468,Cliente 0468,Corporativo,VIP,México,Monterrey,2023-08-20
+469,Cliente 0469,Consumidor,VIP,Colombia,Barranquilla,2023-05-27
+470,Cliente 0470,Corporativo,VIP,México,CDMX,2023-07-18
+471,Cliente 0471,Consumidor,Nuevo,Argentina,La Plata,2023-11-12
+472,Cliente 0472,Corporativo,Nuevo,Argentina,La Plata,2023-08-13
+473,Cliente 0473,Consumidor,Nuevo,Perú,Trujillo,2023-11-25
+474,Cliente 0474,Pyme,VIP,Colombia,Barranquilla,2023-07-31
+475,Cliente 0475,Pyme,Recurrente,México,Puebla,2023-08-02
+476,Cliente 0476,Pyme,VIP,Perú,Cusco,2023-04-08
+477,Cliente 0477,Corporativo,VIP,Perú,Trujillo,2023-07-22
+478,Cliente 0478,Pyme,Recurrente,Chile,La Serena,2023-10-13
+479,Cliente 0479,Corporativo,Recurrente,Perú,Arequipa,2023-05-27
+480,Cliente 0480,Pyme,Nuevo,Colombia,Cartagena,2023-08-11
+481,Cliente 0481,Pyme,VIP,Colombia,Cali,2023-02-22
+482,Cliente 0482,Consumidor,Recurrente,Chile,Concepción,2023-09-15
+483,Cliente 0483,Consumidor,Recurrente,México,Puebla,2023-02-14
+484,Cliente 0484,Corporativo,VIP,Argentina,Rosario,2023-07-24
+485,Cliente 0485,Pyme,Recurrente,Chile,La Serena,2023-09-07
+486,Cliente 0486,Corporativo,Nuevo,México,Guadalajara,2023-02-26
+487,Cliente 0487,Consumidor,Nuevo,Argentina,Buenos Aires,2023-03-09
+488,Cliente 0488,Consumidor,VIP,Colombia,Bogotá,2023-05-05
+489,Cliente 0489,Consumidor,Nuevo,México,CDMX,2023-09-16
+490,Cliente 0490,Consumidor,VIP,Argentina,Mendoza,2023-05-25
+491,Cliente 0491,Consumidor,Nuevo,Argentina,Mendoza,2023-03-28
+492,Cliente 0492,Consumidor,Nuevo,Argentina,La Plata,2023-05-06
+493,Cliente 0493,Corporativo,Nuevo,Argentina,Rosario,2023-03-03
+494,Cliente 0494,Consumidor,Nuevo,Argentina,Mendoza,2023-09-02
+495,Cliente 0495,Consumidor,VIP,Argentina,Córdoba,2023-08-01
+496,Cliente 0496,Corporativo,Recurrente,Argentina,Rosario,2023-06-04
+497,Cliente 0497,Corporativo,VIP,Colombia,Cali,2023-05-09
+498,Cliente 0498,Pyme,Nuevo,México,Guadalajara,2023-07-02
+499,Cliente 0499,Corporativo,Recurrente,Colombia,Bogotá,2023-05-09
+500,Cliente 0500,Pyme,Nuevo,Argentina,Mendoza,2023-11-04
+501,Cliente 0501,Corporativo,VIP,México,CDMX,2023-03-22
+502,Cliente 0502,Pyme,Nuevo,Perú,Chiclayo,2023-10-15
+503,Cliente 0503,Corporativo,Recurrente,México,Guadalajara,2023-02-15
+504,Cliente 0504,Pyme,VIP,Colombia,Bogotá,2023-07-12
+505,Cliente 0505,Consumidor,Nuevo,Colombia,Medellín,2023-06-24
+506,Cliente 0506,Consumidor,Recurrente,Argentina,Córdoba,2023-05-13
+507,Cliente 0507,Pyme,Recurrente,México,Tijuana,2023-08-01
+508,Cliente 0508,Pyme,Nuevo,Argentina,Rosario,2023-05-20
+509,Cliente 0509,Consumidor,Nuevo,Colombia,Cartagena,2023-06-08
+510,Cliente 0510,Corporativo,VIP,Chile,Valparaíso,2023-10-25
+511,Cliente 0511,Corporativo,Nuevo,Argentina,La Plata,2023-05-13
+512,Cliente 0512,Consumidor,Recurrente,Perú,Cusco,2023-03-26
+513,Cliente 0513,Consumidor,VIP,Argentina,Mendoza,2023-04-25
+514,Cliente 0514,Pyme,Recurrente,Argentina,Mendoza,2023-10-20
+515,Cliente 0515,Corporativo,Nuevo,México,CDMX,2023-10-21
+516,Cliente 0516,Corporativo,Recurrente,Chile,Valparaíso,2023-05-17
+517,Cliente 0517,Corporativo,Recurrente,Colombia,Bogotá,2023-11-30
+518,Cliente 0518,Consumidor,Nuevo,Perú,Trujillo,2023-10-11
+519,Cliente 0519,Pyme,VIP,México,Puebla,2023-04-17
+520,Cliente 0520,Consumidor,Nuevo,Argentina,Mendoza,2023-10-11
+521,Cliente 0521,Pyme,VIP,Perú,Chiclayo,2023-10-16
+522,Cliente 0522,Corporativo,Recurrente,Perú,Cusco,2023-11-26
+523,Cliente 0523,Consumidor,VIP,Chile,Santiago,2023-02-19
+524,Cliente 0524,Consumidor,Nuevo,Argentina,Córdoba,2023-05-22
+525,Cliente 0525,Corporativo,Nuevo,Perú,Trujillo,2023-07-18
+526,Cliente 0526,Corporativo,Recurrente,Colombia,Medellín,2023-04-24
+527,Cliente 0527,Corporativo,Recurrente,Perú,Cusco,2023-10-24
+528,Cliente 0528,Pyme,Nuevo,México,Puebla,2023-02-01
+529,Cliente 0529,Corporativo,Nuevo,Chile,Santiago,2023-09-24
+530,Cliente 0530,Corporativo,Recurrente,Chile,Concepción,2023-01-19
+531,Cliente 0531,Pyme,VIP,Chile,Concepción,2023-04-26
+532,Cliente 0532,Pyme,VIP,México,Monterrey,2023-06-21
+533,Cliente 0533,Consumidor,Recurrente,México,Puebla,2023-06-25
+534,Cliente 0534,Corporativo,VIP,Perú,Trujillo,2023-01-12
+535,Cliente 0535,Corporativo,Recurrente,México,Monterrey,2023-05-24
+536,Cliente 0536,Consumidor,VIP,Perú,Lima,2023-02-17
+537,Cliente 0537,Consumidor,VIP,Argentina,Córdoba,2023-02-24
+538,Cliente 0538,Corporativo,VIP,Chile,Valparaíso,2023-04-22
+539,Cliente 0539,Consumidor,VIP,Colombia,Barranquilla,2023-03-22
+540,Cliente 0540,Pyme,Nuevo,Perú,Arequipa,2023-07-26
+541,Cliente 0541,Corporativo,VIP,Chile,La Serena,2023-10-26
+542,Cliente 0542,Pyme,VIP,Chile,Antofagasta,2023-05-11
+543,Cliente 0543,Corporativo,VIP,Chile,Antofagasta,2023-11-14
+544,Cliente 0544,Consumidor,Nuevo,Argentina,La Plata,2023-01-10
+545,Cliente 0545,Pyme,VIP,México,Monterrey,2023-09-08
+546,Cliente 0546,Pyme,VIP,Colombia,Cartagena,2023-01-06
+547,Cliente 0547,Consumidor,Nuevo,Chile,Concepción,2023-04-26
+548,Cliente 0548,Pyme,VIP,Colombia,Cali,2023-08-11
+549,Cliente 0549,Pyme,VIP,Argentina,La Plata,2023-02-08
+550,Cliente 0550,Corporativo,Recurrente,México,Puebla,2023-05-25
+551,Cliente 0551,Corporativo,Nuevo,Argentina,La Plata,2023-09-16
+552,Cliente 0552,Corporativo,Nuevo,Chile,Santiago,2023-07-04
+553,Cliente 0553,Corporativo,Recurrente,Colombia,Medellín,2023-06-07
+554,Cliente 0554,Corporativo,Recurrente,Chile,Valparaíso,2023-03-11
+555,Cliente 0555,Pyme,VIP,Chile,Santiago,2023-04-22
+556,Cliente 0556,Corporativo,Nuevo,Chile,Concepción,2023-10-29
+557,Cliente 0557,Pyme,Nuevo,Colombia,Bogotá,2023-06-10
+558,Cliente 0558,Consumidor,VIP,México,Guadalajara,2023-03-13
+559,Cliente 0559,Corporativo,Recurrente,México,Monterrey,2023-02-19
+560,Cliente 0560,Consumidor,Nuevo,México,Puebla,2023-01-14
+561,Cliente 0561,Pyme,VIP,Chile,La Serena,2023-11-18
+562,Cliente 0562,Corporativo,Recurrente,México,Puebla,2023-02-02
+563,Cliente 0563,Corporativo,VIP,Colombia,Medellín,2023-08-19
+564,Cliente 0564,Pyme,Nuevo,Colombia,Cartagena,2023-10-11
+565,Cliente 0565,Corporativo,Nuevo,Perú,Trujillo,2023-08-24
+566,Cliente 0566,Pyme,Recurrente,Perú,Cusco,2023-03-07
+567,Cliente 0567,Corporativo,VIP,Argentina,Mendoza,2023-01-24
+568,Cliente 0568,Corporativo,VIP,Colombia,Cali,2023-06-05
+569,Cliente 0569,Pyme,Nuevo,México,Monterrey,2023-01-22
+570,Cliente 0570,Consumidor,Recurrente,México,Monterrey,2023-10-03
+571,Cliente 0571,Pyme,Nuevo,Colombia,Medellín,2023-05-25
+572,Cliente 0572,Pyme,Nuevo,Argentina,Mendoza,2023-05-02
+573,Cliente 0573,Consumidor,Recurrente,Argentina,Mendoza,2023-04-30
+574,Cliente 0574,Consumidor,Recurrente,Argentina,Córdoba,2023-02-21
+575,Cliente 0575,Corporativo,Recurrente,Perú,Arequipa,2023-08-29
+576,Cliente 0576,Consumidor,Recurrente,Argentina,Buenos Aires,2023-06-02
+577,Cliente 0577,Pyme,VIP,México,Guadalajara,2023-05-20
+578,Cliente 0578,Corporativo,VIP,Chile,La Serena,2023-03-26
+579,Cliente 0579,Consumidor,VIP,Chile,La Serena,2023-09-08
+580,Cliente 0580,Consumidor,Recurrente,Colombia,Medellín,2023-07-06
+581,Cliente 0581,Consumidor,Recurrente,México,Tijuana,2023-07-08
+582,Cliente 0582,Pyme,Nuevo,Argentina,Mendoza,2023-02-24
+583,Cliente 0583,Pyme,Recurrente,Argentina,Buenos Aires,2023-07-18
+584,Cliente 0584,Pyme,Nuevo,Argentina,Buenos Aires,2023-04-21
+585,Cliente 0585,Consumidor,Recurrente,Chile,Santiago,2023-01-02
+586,Cliente 0586,Corporativo,Nuevo,Colombia,Barranquilla,2023-07-21
+587,Cliente 0587,Consumidor,VIP,Chile,Santiago,2023-08-03
+588,Cliente 0588,Pyme,Recurrente,Argentina,Rosario,2023-01-24
+589,Cliente 0589,Consumidor,Nuevo,México,Tijuana,2023-09-22
+590,Cliente 0590,Pyme,Recurrente,Colombia,Cartagena,2023-06-06
+591,Cliente 0591,Corporativo,VIP,Argentina,La Plata,2023-09-07
+592,Cliente 0592,Corporativo,VIP,Perú,Trujillo,2023-02-12
+593,Cliente 0593,Consumidor,Recurrente,Colombia,Medellín,2023-05-06
+594,Cliente 0594,Consumidor,VIP,México,Guadalajara,2023-07-28
+595,Cliente 0595,Corporativo,Nuevo,Perú,Arequipa,2023-05-15
+596,Cliente 0596,Corporativo,Recurrente,Argentina,Rosario,2023-01-15
+597,Cliente 0597,Consumidor,Recurrente,Chile,Santiago,2023-01-12
+598,Cliente 0598,Corporativo,Recurrente,Argentina,Rosario,2023-05-28
+599,Cliente 0599,Pyme,Nuevo,Perú,Chiclayo,2023-12-01
+600,Cliente 0600,Pyme,Recurrente,Chile,Concepción,2023-10-31
+601,Cliente 0601,Corporativo,Recurrente,México,Puebla,2023-08-16
+602,Cliente 0602,Pyme,VIP,Perú,Trujillo,2023-06-13
+603,Cliente 0603,Corporativo,VIP,México,Tijuana,2023-03-29
+604,Cliente 0604,Pyme,Recurrente,Colombia,Bogotá,2023-10-13
+605,Cliente 0605,Corporativo,Recurrente,Colombia,Bogotá,2023-09-13
+606,Cliente 0606,Pyme,Nuevo,Colombia,Barranquilla,2023-08-21
+607,Cliente 0607,Consumidor,VIP,Perú,Arequipa,2023-07-15
+608,Cliente 0608,Corporativo,VIP,Perú,Trujillo,2023-10-21
+609,Cliente 0609,Pyme,Recurrente,México,CDMX,2023-05-14
+610,Cliente 0610,Consumidor,VIP,México,Puebla,2023-01-01
+611,Cliente 0611,Corporativo,Nuevo,Colombia,Bogotá,2023-08-15
+612,Cliente 0612,Pyme,VIP,México,Tijuana,2023-08-09
+613,Cliente 0613,Pyme,Recurrente,Chile,Santiago,2023-11-28
+614,Cliente 0614,Corporativo,Nuevo,Colombia,Barranquilla,2023-09-26
+615,Cliente 0615,Pyme,Nuevo,México,Puebla,2023-10-18
+616,Cliente 0616,Corporativo,Nuevo,Colombia,Cali,2023-05-28
+617,Cliente 0617,Pyme,Nuevo,Chile,Valparaíso,2023-01-08
+618,Cliente 0618,Consumidor,VIP,Colombia,Cartagena,2023-02-17
+619,Cliente 0619,Pyme,Nuevo,México,Puebla,2023-06-06
+620,Cliente 0620,Pyme,Recurrente,México,Puebla,2023-01-21
+621,Cliente 0621,Consumidor,Nuevo,México,CDMX,2023-10-12
+622,Cliente 0622,Corporativo,Recurrente,Argentina,Mendoza,2023-06-06
+623,Cliente 0623,Pyme,Nuevo,México,Guadalajara,2023-07-14
+624,Cliente 0624,Pyme,VIP,México,Tijuana,2023-01-29
+625,Cliente 0625,Pyme,Recurrente,Argentina,Rosario,2023-11-19
+626,Cliente 0626,Pyme,Nuevo,México,Tijuana,2023-01-26
+627,Cliente 0627,Consumidor,Nuevo,Chile,Concepción,2023-01-06
+628,Cliente 0628,Consumidor,Recurrente,Chile,La Serena,2023-10-06
+629,Cliente 0629,Consumidor,Recurrente,Argentina,Buenos Aires,2023-03-07
+630,Cliente 0630,Pyme,Recurrente,Perú,Arequipa,2023-05-18
+631,Cliente 0631,Corporativo,Nuevo,Perú,Chiclayo,2023-09-05
+632,Cliente 0632,Consumidor,Recurrente,Colombia,Cartagena,2023-10-29
+633,Cliente 0633,Corporativo,VIP,México,CDMX,2023-11-02
+634,Cliente 0634,Corporativo,VIP,Perú,Chiclayo,2023-05-04
+635,Cliente 0635,Pyme,VIP,Chile,Santiago,2023-01-09
+636,Cliente 0636,Consumidor,Recurrente,Argentina,Córdoba,2023-07-13
+637,Cliente 0637,Consumidor,VIP,Colombia,Cartagena,2023-08-20
+638,Cliente 0638,Pyme,VIP,Perú,Cusco,2023-02-05
+639,Cliente 0639,Pyme,Nuevo,Colombia,Cali,2023-04-23
+640,Cliente 0640,Corporativo,Nuevo,Colombia,Medellín,2023-10-19
+641,Cliente 0641,Consumidor,Recurrente,Chile,Antofagasta,2023-01-25
+642,Cliente 0642,Pyme,Nuevo,México,CDMX,2023-11-26
+643,Cliente 0643,Corporativo,VIP,Colombia,Medellín,2023-03-23
+644,Cliente 0644,Corporativo,Nuevo,Argentina,Rosario,2023-09-08
+645,Cliente 0645,Corporativo,Recurrente,Perú,Lima,2023-11-17
+646,Cliente 0646,Corporativo,VIP,Perú,Chiclayo,2023-10-31
+647,Cliente 0647,Corporativo,VIP,Argentina,Buenos Aires,2023-03-23
+648,Cliente 0648,Pyme,Nuevo,Perú,Lima,2023-03-22
+649,Cliente 0649,Consumidor,VIP,Perú,Arequipa,2023-07-25
+650,Cliente 0650,Consumidor,Nuevo,Colombia,Medellín,2023-03-17
+651,Cliente 0651,Corporativo,Recurrente,Colombia,Medellín,2023-11-09
+652,Cliente 0652,Consumidor,VIP,Chile,Valparaíso,2023-09-02
+653,Cliente 0653,Consumidor,Recurrente,Chile,Valparaíso,2023-06-21
+654,Cliente 0654,Pyme,Recurrente,Perú,Trujillo,2023-10-24
+655,Cliente 0655,Consumidor,Nuevo,Colombia,Cartagena,2023-11-06
+656,Cliente 0656,Consumidor,Recurrente,Argentina,Buenos Aires,2023-05-11
+657,Cliente 0657,Consumidor,VIP,Perú,Trujillo,2023-06-18
+658,Cliente 0658,Consumidor,Recurrente,Chile,Santiago,2023-05-28
+659,Cliente 0659,Consumidor,Recurrente,Argentina,Rosario,2023-01-18
+660,Cliente 0660,Consumidor,VIP,Perú,Chiclayo,2023-03-25
+661,Cliente 0661,Consumidor,Recurrente,Argentina,Córdoba,2023-09-16
+662,Cliente 0662,Corporativo,VIP,Colombia,Medellín,2023-02-28
+663,Cliente 0663,Pyme,Recurrente,Colombia,Cali,2023-12-02
+664,Cliente 0664,Pyme,Nuevo,Perú,Lima,2023-08-19
+665,Cliente 0665,Consumidor,VIP,Chile,La Serena,2023-11-02
+666,Cliente 0666,Consumidor,VIP,Perú,Lima,2023-11-10
+667,Cliente 0667,Pyme,Nuevo,Chile,Concepción,2023-04-12
+668,Cliente 0668,Consumidor,VIP,Argentina,Buenos Aires,2023-03-19
+669,Cliente 0669,Pyme,Nuevo,Chile,Santiago,2023-02-02
+670,Cliente 0670,Corporativo,Recurrente,Chile,Valparaíso,2023-08-03
+671,Cliente 0671,Corporativo,Recurrente,Perú,Cusco,2023-06-18
+672,Cliente 0672,Consumidor,Nuevo,Perú,Arequipa,2023-10-25
+673,Cliente 0673,Consumidor,Nuevo,Argentina,Buenos Aires,2023-09-14
+674,Cliente 0674,Corporativo,Nuevo,Chile,La Serena,2023-06-25
+675,Cliente 0675,Corporativo,Recurrente,Argentina,Rosario,2023-08-18
+676,Cliente 0676,Consumidor,Nuevo,Chile,Concepción,2023-10-02
+677,Cliente 0677,Consumidor,Recurrente,Perú,Chiclayo,2023-11-12
+678,Cliente 0678,Corporativo,Recurrente,México,CDMX,2023-07-28
+679,Cliente 0679,Corporativo,Nuevo,Argentina,Buenos Aires,2023-07-02
+680,Cliente 0680,Pyme,VIP,Colombia,Barranquilla,2023-04-15
+681,Cliente 0681,Corporativo,Nuevo,Argentina,Córdoba,2023-10-15
+682,Cliente 0682,Consumidor,Nuevo,México,CDMX,2023-11-26
+683,Cliente 0683,Corporativo,VIP,México,Guadalajara,2023-05-11
+684,Cliente 0684,Corporativo,Nuevo,Colombia,Cartagena,2023-02-05
+685,Cliente 0685,Pyme,Recurrente,Colombia,Bogotá,2023-08-23
+686,Cliente 0686,Consumidor,Nuevo,México,CDMX,2023-06-16
+687,Cliente 0687,Pyme,Recurrente,Chile,Santiago,2023-09-07
+688,Cliente 0688,Corporativo,VIP,Chile,La Serena,2023-11-17
+689,Cliente 0689,Consumidor,Nuevo,Chile,Valparaíso,2023-06-04
+690,Cliente 0690,Consumidor,Nuevo,Perú,Trujillo,2023-04-18
+691,Cliente 0691,Consumidor,VIP,Argentina,La Plata,2023-01-21
+692,Cliente 0692,Pyme,Recurrente,Perú,Cusco,2023-05-06
+693,Cliente 0693,Corporativo,Nuevo,Colombia,Bogotá,2023-07-12
+694,Cliente 0694,Pyme,Nuevo,Chile,Valparaíso,2023-01-07
+695,Cliente 0695,Pyme,Recurrente,Argentina,Buenos Aires,2023-05-21
+696,Cliente 0696,Corporativo,VIP,Chile,Antofagasta,2023-03-29
+697,Cliente 0697,Corporativo,Nuevo,Argentina,Rosario,2023-05-18
+698,Cliente 0698,Consumidor,Nuevo,Colombia,Cali,2023-01-31
+699,Cliente 0699,Pyme,Recurrente,Perú,Lima,2023-04-05
+700,Cliente 0700,Consumidor,Nuevo,Argentina,Córdoba,2023-09-12
+701,Cliente 0701,Pyme,Nuevo,México,Monterrey,2023-03-04
+702,Cliente 0702,Corporativo,Nuevo,México,Tijuana,2023-05-18
+703,Cliente 0703,Corporativo,VIP,México,Guadalajara,2023-02-02
+704,Cliente 0704,Pyme,VIP,Perú,Chiclayo,2023-11-18
+705,Cliente 0705,Consumidor,VIP,Perú,Chiclayo,2023-02-17
+706,Cliente 0706,Corporativo,Nuevo,México,Puebla,2023-02-28
+707,Cliente 0707,Consumidor,Nuevo,Chile,Santiago,2023-10-17
+708,Cliente 0708,Pyme,Recurrente,Argentina,Córdoba,2023-11-22
+709,Cliente 0709,Consumidor,Nuevo,Colombia,Cali,2023-01-22
+710,Cliente 0710,Consumidor,Nuevo,Perú,Arequipa,2023-06-20
+711,Cliente 0711,Consumidor,VIP,México,Tijuana,2023-09-21
+712,Cliente 0712,Pyme,VIP,Perú,Lima,2023-05-25
+713,Cliente 0713,Corporativo,Recurrente,Chile,Antofagasta,2023-10-12
+714,Cliente 0714,Pyme,Recurrente,Perú,Arequipa,2023-09-13
+715,Cliente 0715,Pyme,VIP,Chile,Concepción,2023-09-04
+716,Cliente 0716,Pyme,VIP,Argentina,Rosario,2023-08-10
+717,Cliente 0717,Pyme,VIP,México,Puebla,2023-06-28
+718,Cliente 0718,Pyme,Nuevo,Perú,Arequipa,2023-09-03
+719,Cliente 0719,Consumidor,Nuevo,Argentina,Mendoza,2023-02-15
+720,Cliente 0720,Consumidor,VIP,Argentina,Rosario,2023-01-23
+721,Cliente 0721,Consumidor,Recurrente,Argentina,Buenos Aires,2023-03-23
+722,Cliente 0722,Corporativo,Nuevo,Colombia,Medellín,2023-06-08
+723,Cliente 0723,Consumidor,Recurrente,Colombia,Cali,2023-04-18
+724,Cliente 0724,Corporativo,Recurrente,México,Guadalajara,2023-10-29
+725,Cliente 0725,Corporativo,Recurrente,Colombia,Bogotá,2023-11-08
+726,Cliente 0726,Corporativo,Recurrente,Chile,Valparaíso,2023-05-05
+727,Cliente 0727,Consumidor,Recurrente,Perú,Chiclayo,2023-05-24
+728,Cliente 0728,Corporativo,Nuevo,Argentina,Córdoba,2023-09-10
+729,Cliente 0729,Corporativo,Recurrente,Colombia,Cali,2023-11-22
+730,Cliente 0730,Consumidor,Recurrente,Colombia,Bogotá,2023-06-10
+731,Cliente 0731,Consumidor,Recurrente,México,CDMX,2023-02-25
+732,Cliente 0732,Pyme,Nuevo,Argentina,La Plata,2023-03-30
+733,Cliente 0733,Corporativo,Nuevo,Chile,Valparaíso,2023-01-26
+734,Cliente 0734,Consumidor,Nuevo,Colombia,Bogotá,2023-06-16
+735,Cliente 0735,Corporativo,VIP,Chile,Antofagasta,2023-03-01
+736,Cliente 0736,Consumidor,Nuevo,Perú,Trujillo,2023-08-03
+737,Cliente 0737,Corporativo,Nuevo,Chile,Antofagasta,2023-02-24
+738,Cliente 0738,Corporativo,Nuevo,Colombia,Cali,2023-12-01
+739,Cliente 0739,Consumidor,Nuevo,Perú,Chiclayo,2023-04-01
+740,Cliente 0740,Pyme,Recurrente,Colombia,Medellín,2023-09-06
+741,Cliente 0741,Corporativo,Recurrente,Colombia,Barranquilla,2023-10-04
+742,Cliente 0742,Consumidor,VIP,Chile,La Serena,2023-07-20
+743,Cliente 0743,Corporativo,Recurrente,Argentina,Mendoza,2023-08-30
+744,Cliente 0744,Consumidor,Recurrente,Perú,Arequipa,2023-04-18
+745,Cliente 0745,Consumidor,Recurrente,Chile,La Serena,2023-07-21
+746,Cliente 0746,Pyme,VIP,Argentina,Buenos Aires,2023-09-16
+747,Cliente 0747,Pyme,Recurrente,Colombia,Bogotá,2023-06-09
+748,Cliente 0748,Consumidor,Recurrente,Argentina,Córdoba,2023-02-22
+749,Cliente 0749,Pyme,Recurrente,Argentina,Mendoza,2023-03-03
+750,Cliente 0750,Corporativo,Nuevo,Argentina,Córdoba,2023-04-03
+751,Cliente 0751,Pyme,VIP,Chile,Santiago,2023-03-20
+752,Cliente 0752,Consumidor,Recurrente,Argentina,La Plata,2023-09-18
+753,Cliente 0753,Consumidor,Nuevo,México,Guadalajara,2023-08-16
+754,Cliente 0754,Pyme,Recurrente,Colombia,Barranquilla,2023-10-23
+755,Cliente 0755,Corporativo,Recurrente,México,Guadalajara,2023-02-01
+756,Cliente 0756,Pyme,Recurrente,Colombia,Bogotá,2023-05-18
+757,Cliente 0757,Pyme,Recurrente,Argentina,Rosario,2023-07-14
+758,Cliente 0758,Pyme,Recurrente,Colombia,Cartagena,2023-02-05
+759,Cliente 0759,Consumidor,VIP,Colombia,Barranquilla,2023-09-17
+760,Cliente 0760,Consumidor,VIP,Argentina,La Plata,2023-10-12
+761,Cliente 0761,Corporativo,Recurrente,Colombia,Cali,2023-03-03
+762,Cliente 0762,Corporativo,VIP,Perú,Cusco,2023-01-01
+763,Cliente 0763,Consumidor,Recurrente,Argentina,Mendoza,2023-11-13
+764,Cliente 0764,Pyme,VIP,Chile,Valparaíso,2023-01-20
+765,Cliente 0765,Corporativo,VIP,Chile,Santiago,2023-05-14
+766,Cliente 0766,Corporativo,Recurrente,México,CDMX,2023-04-03
+767,Cliente 0767,Corporativo,Recurrente,Colombia,Cali,2023-06-30
+768,Cliente 0768,Consumidor,Recurrente,Chile,Santiago,2023-08-08
+769,Cliente 0769,Pyme,Recurrente,Chile,Concepción,2023-07-18
+770,Cliente 0770,Corporativo,Nuevo,Argentina,Buenos Aires,2023-08-28
+771,Cliente 0771,Corporativo,Nuevo,Chile,La Serena,2023-03-13
+772,Cliente 0772,Corporativo,VIP,Argentina,Córdoba,2023-10-30
+773,Cliente 0773,Pyme,VIP,Argentina,Mendoza,2023-09-24
+774,Cliente 0774,Consumidor,Nuevo,Colombia,Medellín,2023-08-26
+775,Cliente 0775,Consumidor,Recurrente,México,CDMX,2023-04-13
+776,Cliente 0776,Corporativo,VIP,México,Monterrey,2023-05-28
+777,Cliente 0777,Consumidor,Recurrente,Chile,Santiago,2023-11-17
+778,Cliente 0778,Consumidor,Recurrente,Chile,Antofagasta,2023-04-18
+779,Cliente 0779,Corporativo,Nuevo,Argentina,La Plata,2023-06-06
+780,Cliente 0780,Consumidor,Recurrente,Perú,Lima,2023-07-10
+781,Cliente 0781,Consumidor,Nuevo,Colombia,Medellín,2023-02-13
+782,Cliente 0782,Pyme,Recurrente,México,Guadalajara,2023-07-18
+783,Cliente 0783,Corporativo,Nuevo,Argentina,Buenos Aires,2023-11-28
+784,Cliente 0784,Consumidor,Recurrente,México,Tijuana,2023-11-28
+785,Cliente 0785,Corporativo,Recurrente,Argentina,Rosario,2023-01-07
+786,Cliente 0786,Corporativo,Nuevo,Chile,Concepción,2023-04-11
+787,Cliente 0787,Pyme,Recurrente,Chile,Concepción,2023-03-11
+788,Cliente 0788,Pyme,VIP,Argentina,Buenos Aires,2023-11-29
+789,Cliente 0789,Pyme,VIP,Perú,Chiclayo,2023-01-05
+790,Cliente 0790,Corporativo,Nuevo,Perú,Trujillo,2023-10-08
+791,Cliente 0791,Corporativo,Recurrente,Perú,Trujillo,2023-01-09
+792,Cliente 0792,Consumidor,VIP,Perú,Trujillo,2023-08-28
+793,Cliente 0793,Corporativo,VIP,México,CDMX,2023-01-29
+794,Cliente 0794,Pyme,Recurrente,Perú,Arequipa,2023-11-19
+795,Cliente 0795,Corporativo,Recurrente,Perú,Trujillo,2023-05-02
+796,Cliente 0796,Consumidor,Recurrente,Colombia,Cartagena,2023-02-13
+797,Cliente 0797,Corporativo,VIP,México,Tijuana,2023-01-10
+798,Cliente 0798,Consumidor,VIP,Perú,Chiclayo,2023-07-02
+799,Cliente 0799,Consumidor,Recurrente,Argentina,Córdoba,2023-07-05
+800,Cliente 0800,Consumidor,VIP,México,Monterrey,2023-02-19
+801,Cliente 0801,Corporativo,Nuevo,Perú,Lima,2023-08-11
+802,Cliente 0802,Corporativo,Recurrente,Perú,Cusco,2023-06-16
+803,Cliente 0803,Consumidor,Recurrente,Argentina,Rosario,2023-04-09
+804,Cliente 0804,Pyme,Nuevo,Colombia,Cartagena,2023-02-08
+805,Cliente 0805,Consumidor,VIP,Chile,Valparaíso,2023-03-21
+806,Cliente 0806,Corporativo,Nuevo,Chile,Antofagasta,2023-07-03
+807,Cliente 0807,Corporativo,Recurrente,México,Guadalajara,2023-08-22
+808,Cliente 0808,Corporativo,VIP,Argentina,Mendoza,2023-09-20
+809,Cliente 0809,Corporativo,VIP,México,CDMX,2023-03-28
+810,Cliente 0810,Consumidor,Nuevo,México,Monterrey,2023-01-12
+811,Cliente 0811,Consumidor,VIP,Chile,Concepción,2023-08-17
+812,Cliente 0812,Consumidor,VIP,México,Puebla,2023-10-18
+813,Cliente 0813,Corporativo,Recurrente,Chile,La Serena,2023-05-10
+814,Cliente 0814,Pyme,Nuevo,Chile,Santiago,2023-11-13
+815,Cliente 0815,Pyme,Nuevo,Perú,Lima,2023-06-21
+816,Cliente 0816,Pyme,Nuevo,Colombia,Bogotá,2023-01-16
+817,Cliente 0817,Consumidor,Nuevo,México,Monterrey,2023-06-26
+818,Cliente 0818,Corporativo,Nuevo,Chile,Antofagasta,2023-02-04
+819,Cliente 0819,Corporativo,Recurrente,Colombia,Bogotá,2023-07-03
+820,Cliente 0820,Corporativo,Recurrente,Argentina,La Plata,2023-03-09
+821,Cliente 0821,Corporativo,Nuevo,México,Monterrey,2023-03-27
+822,Cliente 0822,Consumidor,Nuevo,México,Puebla,2023-11-23
+823,Cliente 0823,Pyme,VIP,México,Guadalajara,2023-11-21
+824,Cliente 0824,Pyme,VIP,México,CDMX,2023-05-29
+825,Cliente 0825,Corporativo,VIP,Colombia,Barranquilla,2023-01-09
+826,Cliente 0826,Consumidor,VIP,Argentina,Buenos Aires,2023-02-01
+827,Cliente 0827,Pyme,Nuevo,Colombia,Bogotá,2023-11-08
+828,Cliente 0828,Consumidor,VIP,Chile,La Serena,2023-05-22
+829,Cliente 0829,Consumidor,VIP,Perú,Cusco,2023-09-15
+830,Cliente 0830,Pyme,Nuevo,Colombia,Cali,2023-05-01
+831,Cliente 0831,Pyme,VIP,Argentina,Rosario,2023-01-18
+832,Cliente 0832,Pyme,VIP,México,Puebla,2023-10-10
+833,Cliente 0833,Consumidor,Nuevo,Argentina,Buenos Aires,2023-07-11
+834,Cliente 0834,Consumidor,Recurrente,Chile,Valparaíso,2023-01-25
+835,Cliente 0835,Pyme,Recurrente,Argentina,Córdoba,2023-06-02
+836,Cliente 0836,Pyme,Recurrente,Perú,Arequipa,2023-11-12
+837,Cliente 0837,Consumidor,Nuevo,México,Puebla,2023-06-16
+838,Cliente 0838,Pyme,VIP,Colombia,Bogotá,2023-10-07
+839,Cliente 0839,Pyme,Nuevo,Chile,Valparaíso,2023-10-17
+840,Cliente 0840,Consumidor,Recurrente,Colombia,Cali,2023-01-07
+841,Cliente 0841,Consumidor,Nuevo,Perú,Trujillo,2023-04-09
+842,Cliente 0842,Corporativo,VIP,México,CDMX,2023-07-07
+843,Cliente 0843,Consumidor,Nuevo,Perú,Cusco,2023-10-04
+844,Cliente 0844,Consumidor,Recurrente,Colombia,Medellín,2023-01-05
+845,Cliente 0845,Corporativo,VIP,Perú,Cusco,2023-01-18
+846,Cliente 0846,Consumidor,Nuevo,Colombia,Cali,2023-06-10
+847,Cliente 0847,Corporativo,Recurrente,Chile,La Serena,2023-04-13
+848,Cliente 0848,Consumidor,Nuevo,Chile,La Serena,2023-01-04
+849,Cliente 0849,Consumidor,Recurrente,México,CDMX,2023-09-12
+850,Cliente 0850,Pyme,Recurrente,Argentina,Mendoza,2023-02-14
+851,Cliente 0851,Corporativo,VIP,México,Tijuana,2023-05-22
+852,Cliente 0852,Corporativo,Nuevo,Colombia,Medellín,2023-03-30
+853,Cliente 0853,Consumidor,Recurrente,Chile,La Serena,2023-11-09
+854,Cliente 0854,Pyme,VIP,Perú,Lima,2023-03-09
+855,Cliente 0855,Pyme,VIP,Argentina,Córdoba,2023-06-12
+856,Cliente 0856,Pyme,VIP,Argentina,Buenos Aires,2023-04-25
+857,Cliente 0857,Pyme,VIP,México,Puebla,2023-06-08
+858,Cliente 0858,Pyme,Nuevo,Chile,Valparaíso,2023-02-20
+859,Cliente 0859,Corporativo,Recurrente,Colombia,Medellín,2023-03-19
+860,Cliente 0860,Corporativo,Nuevo,México,CDMX,2023-03-26
+861,Cliente 0861,Pyme,Nuevo,Perú,Trujillo,2023-11-07
+862,Cliente 0862,Consumidor,Nuevo,Argentina,Mendoza,2023-05-10
+863,Cliente 0863,Corporativo,Nuevo,Chile,La Serena,2023-02-12
+864,Cliente 0864,Consumidor,Recurrente,Chile,La Serena,2023-06-24
+865,Cliente 0865,Corporativo,Nuevo,Colombia,Bogotá,2023-05-10
+866,Cliente 0866,Consumidor,VIP,Argentina,La Plata,2023-12-02
+867,Cliente 0867,Pyme,Nuevo,Argentina,Rosario,2023-03-17
+868,Cliente 0868,Consumidor,Nuevo,Chile,Concepción,2023-05-30
+869,Cliente 0869,Pyme,VIP,Chile,Concepción,2023-02-19
+870,Cliente 0870,Consumidor,Nuevo,Chile,Concepción,2023-04-15
+871,Cliente 0871,Corporativo,VIP,México,CDMX,2023-06-11
+872,Cliente 0872,Corporativo,VIP,Perú,Chiclayo,2023-03-10
+873,Cliente 0873,Corporativo,Nuevo,Colombia,Bogotá,2023-09-09
+874,Cliente 0874,Pyme,Nuevo,Chile,Santiago,2023-07-25
+875,Cliente 0875,Consumidor,Recurrente,México,CDMX,2023-05-15
+876,Cliente 0876,Corporativo,Nuevo,México,Monterrey,2023-10-08
+877,Cliente 0877,Corporativo,VIP,Argentina,Buenos Aires,2023-04-16
+878,Cliente 0878,Corporativo,Nuevo,Argentina,La Plata,2023-09-25
+879,Cliente 0879,Corporativo,VIP,Argentina,Buenos Aires,2023-02-22
+880,Cliente 0880,Pyme,VIP,Chile,Antofagasta,2023-09-03
+881,Cliente 0881,Corporativo,VIP,México,Guadalajara,2023-10-10
+882,Cliente 0882,Pyme,Recurrente,Argentina,La Plata,2023-06-21
+883,Cliente 0883,Corporativo,Recurrente,Chile,Antofagasta,2023-07-28
+884,Cliente 0884,Consumidor,Nuevo,Perú,Trujillo,2023-04-15
+885,Cliente 0885,Corporativo,VIP,Chile,Antofagasta,2023-03-15
+886,Cliente 0886,Pyme,Nuevo,Argentina,Rosario,2023-02-22
+887,Cliente 0887,Pyme,Recurrente,México,Guadalajara,2023-01-17
+888,Cliente 0888,Consumidor,VIP,Perú,Arequipa,2023-01-04
+889,Cliente 0889,Corporativo,VIP,Argentina,Rosario,2023-10-04
+890,Cliente 0890,Pyme,VIP,Chile,Antofagasta,2023-02-13
+891,Cliente 0891,Corporativo,Nuevo,Chile,Antofagasta,2023-07-09
+892,Cliente 0892,Corporativo,Nuevo,Argentina,Buenos Aires,2023-11-20
+893,Cliente 0893,Corporativo,Nuevo,Colombia,Bogotá,2023-08-22
+894,Cliente 0894,Consumidor,VIP,Perú,Trujillo,2023-09-19
+895,Cliente 0895,Consumidor,Recurrente,Perú,Arequipa,2023-02-28
+896,Cliente 0896,Pyme,VIP,Chile,Santiago,2023-01-21
+897,Cliente 0897,Pyme,Recurrente,Argentina,Córdoba,2023-01-05
+898,Cliente 0898,Pyme,VIP,México,Tijuana,2023-07-08
+899,Cliente 0899,Corporativo,VIP,Colombia,Barranquilla,2023-05-18
+900,Cliente 0900,Consumidor,VIP,Perú,Chiclayo,2023-11-05
+901,Cliente 0901,Corporativo,Nuevo,Perú,Arequipa,2023-01-19
+902,Cliente 0902,Pyme,VIP,Perú,Chiclayo,2023-02-26
+903,Cliente 0903,Corporativo,Nuevo,México,Guadalajara,2023-07-05
+904,Cliente 0904,Pyme,VIP,Colombia,Medellín,2023-09-05
+905,Cliente 0905,Corporativo,Recurrente,Colombia,Barranquilla,2023-11-12
+906,Cliente 0906,Consumidor,VIP,Argentina,Rosario,2023-09-27
+907,Cliente 0907,Corporativo,VIP,Perú,Lima,2023-06-16
+908,Cliente 0908,Corporativo,VIP,México,CDMX,2023-09-15
+909,Cliente 0909,Corporativo,VIP,Colombia,Cartagena,2023-07-01
+910,Cliente 0910,Pyme,Recurrente,Argentina,Rosario,2023-10-26
+911,Cliente 0911,Pyme,Nuevo,Argentina,Córdoba,2023-08-30
+912,Cliente 0912,Pyme,VIP,Argentina,Córdoba,2023-05-04
+913,Cliente 0913,Consumidor,Nuevo,Chile,Santiago,2023-06-07
+914,Cliente 0914,Corporativo,Nuevo,Perú,Trujillo,2023-06-01
+915,Cliente 0915,Pyme,VIP,Argentina,La Plata,2023-04-03
+916,Cliente 0916,Corporativo,Nuevo,Colombia,Bogotá,2023-06-08
+917,Cliente 0917,Consumidor,VIP,Argentina,La Plata,2023-07-31
+918,Cliente 0918,Corporativo,Recurrente,Perú,Cusco,2023-10-05
+919,Cliente 0919,Pyme,Recurrente,Argentina,Rosario,2023-11-20
+920,Cliente 0920,Corporativo,Nuevo,Argentina,La Plata,2023-04-18
+921,Cliente 0921,Pyme,Nuevo,Perú,Arequipa,2023-06-21
+922,Cliente 0922,Pyme,Nuevo,Colombia,Medellín,2023-03-02
+923,Cliente 0923,Consumidor,VIP,Colombia,Medellín,2023-01-14
+924,Cliente 0924,Pyme,VIP,Chile,Santiago,2023-08-19
+925,Cliente 0925,Consumidor,Recurrente,Chile,Santiago,2023-09-15
+926,Cliente 0926,Consumidor,Nuevo,Perú,Lima,2023-10-19
+927,Cliente 0927,Consumidor,VIP,México,Monterrey,2023-02-20
+928,Cliente 0928,Corporativo,Recurrente,México,Monterrey,2023-05-08
+929,Cliente 0929,Consumidor,Recurrente,Chile,La Serena,2023-06-24
+930,Cliente 0930,Pyme,VIP,Colombia,Cartagena,2023-11-29
+931,Cliente 0931,Consumidor,VIP,Argentina,Buenos Aires,2023-02-06
+932,Cliente 0932,Consumidor,Recurrente,Colombia,Cali,2023-03-20
+933,Cliente 0933,Corporativo,Recurrente,Perú,Chiclayo,2023-10-19
+934,Cliente 0934,Corporativo,Nuevo,Chile,La Serena,2023-11-17
+935,Cliente 0935,Pyme,Recurrente,Argentina,Córdoba,2023-09-24
+936,Cliente 0936,Consumidor,Recurrente,Argentina,Rosario,2023-01-12
+937,Cliente 0937,Pyme,Nuevo,Perú,Lima,2023-02-22
+938,Cliente 0938,Pyme,VIP,Colombia,Bogotá,2023-11-30
+939,Cliente 0939,Consumidor,Recurrente,Chile,Antofagasta,2023-02-25
+940,Cliente 0940,Corporativo,VIP,México,Monterrey,2023-08-16
+941,Cliente 0941,Consumidor,Nuevo,Argentina,Córdoba,2023-09-11
+942,Cliente 0942,Consumidor,Nuevo,Argentina,Rosario,2023-08-25
+943,Cliente 0943,Corporativo,VIP,Argentina,Buenos Aires,2023-02-24
+944,Cliente 0944,Pyme,Nuevo,Argentina,Buenos Aires,2023-07-07
+945,Cliente 0945,Pyme,VIP,Perú,Lima,2023-08-23
+946,Cliente 0946,Consumidor,VIP,Chile,Concepción,2023-06-03
+947,Cliente 0947,Pyme,Nuevo,México,CDMX,2023-07-10
+948,Cliente 0948,Corporativo,Recurrente,México,Monterrey,2023-03-29
+949,Cliente 0949,Consumidor,VIP,Argentina,Rosario,2023-02-06
+950,Cliente 0950,Corporativo,Nuevo,Argentina,Rosario,2023-06-24
+951,Cliente 0951,Consumidor,VIP,Colombia,Cali,2023-07-29
+952,Cliente 0952,Consumidor,VIP,Chile,Concepción,2023-06-01
+953,Cliente 0953,Corporativo,Recurrente,Perú,Cusco,2023-04-10
+954,Cliente 0954,Consumidor,Nuevo,Perú,Cusco,2023-02-23
+955,Cliente 0955,Consumidor,VIP,Argentina,Buenos Aires,2023-07-12
+956,Cliente 0956,Consumidor,VIP,México,Monterrey,2023-01-16
+957,Cliente 0957,Pyme,Nuevo,Colombia,Bogotá,2023-03-18
+958,Cliente 0958,Pyme,Nuevo,Argentina,La Plata,2023-05-09
+959,Cliente 0959,Pyme,VIP,Colombia,Cartagena,2023-07-22
+960,Cliente 0960,Corporativo,Nuevo,Chile,Valparaíso,2023-05-29
+961,Cliente 0961,Corporativo,VIP,Argentina,Rosario,2023-09-25
+962,Cliente 0962,Corporativo,VIP,Argentina,Buenos Aires,2023-05-13
+963,Cliente 0963,Pyme,Nuevo,Colombia,Medellín,2023-01-22
+964,Cliente 0964,Consumidor,Nuevo,Argentina,Córdoba,2023-04-18
+965,Cliente 0965,Pyme,VIP,Argentina,La Plata,2023-09-19
+966,Cliente 0966,Consumidor,Recurrente,Chile,Concepción,2023-11-12
+967,Cliente 0967,Corporativo,Nuevo,México,CDMX,2023-07-20
+968,Cliente 0968,Corporativo,Recurrente,Colombia,Medellín,2023-03-12
+969,Cliente 0969,Consumidor,VIP,Chile,La Serena,2023-11-09
+970,Cliente 0970,Pyme,Recurrente,Perú,Lima,2023-03-11
+971,Cliente 0971,Pyme,Nuevo,Perú,Chiclayo,2023-02-27
+972,Cliente 0972,Pyme,VIP,Chile,La Serena,2023-05-29
+973,Cliente 0973,Corporativo,Nuevo,Colombia,Cartagena,2023-07-27
+974,Cliente 0974,Corporativo,Recurrente,Argentina,Mendoza,2023-06-05
+975,Cliente 0975,Pyme,Nuevo,Chile,Antofagasta,2023-11-29
+976,Cliente 0976,Consumidor,VIP,Chile,Valparaíso,2023-08-07
+977,Cliente 0977,Consumidor,Nuevo,Perú,Arequipa,2023-09-17
+978,Cliente 0978,Pyme,Nuevo,Perú,Chiclayo,2023-10-03
+979,Cliente 0979,Corporativo,VIP,Chile,Concepción,2023-10-05
+980,Cliente 0980,Pyme,Nuevo,Chile,La Serena,2023-08-17
+981,Cliente 0981,Consumidor,Nuevo,Chile,Santiago,2023-07-31
+982,Cliente 0982,Consumidor,VIP,Argentina,La Plata,2023-09-11
+983,Cliente 0983,Consumidor,Nuevo,Argentina,Buenos Aires,2023-02-12
+984,Cliente 0984,Pyme,Recurrente,México,Monterrey,2023-09-01
+985,Cliente 0985,Consumidor,VIP,Argentina,La Plata,2023-01-10
+986,Cliente 0986,Corporativo,VIP,Perú,Lima,2023-08-14
+987,Cliente 0987,Consumidor,Recurrente,Chile,La Serena,2023-09-06
+988,Cliente 0988,Consumidor,VIP,Argentina,Córdoba,2023-02-07
+989,Cliente 0989,Pyme,VIP,Argentina,Rosario,2023-09-08
+990,Cliente 0990,Pyme,Nuevo,Perú,Cusco,2023-01-31
+991,Cliente 0991,Consumidor,Nuevo,México,Puebla,2023-05-19
+992,Cliente 0992,Pyme,VIP,Colombia,Medellín,2023-03-10
+993,Cliente 0993,Consumidor,Nuevo,Chile,Valparaíso,2023-01-26
+994,Cliente 0994,Consumidor,VIP,Chile,Antofagasta,2023-01-29
+995,Cliente 0995,Corporativo,VIP,Argentina,Buenos Aires,2023-10-16
+996,Cliente 0996,Consumidor,VIP,México,Tijuana,2023-03-01
+997,Cliente 0997,Corporativo,Nuevo,Chile,Antofagasta,2023-05-01
+998,Cliente 0998,Corporativo,Recurrente,Argentina,Mendoza,2023-08-07
+999,Cliente 0999,Consumidor,Recurrente,Perú,Chiclayo,2023-02-11
+1000,Cliente 1000,Consumidor,Nuevo,México,Monterrey,2023-04-02

@@ -107,6 +107,9 @@ def cargar_datos():
         clientes[["id_cliente", "segmento", "tipo_cliente", "nombre_cliente"]],
         on="id_cliente", how="left"
     )
+    # Corrección de nombres de país para los mapas de Plotly
+    df["pais"] = df["pais"].replace({"México": "Mexico", "Perú": "Peru"})
+
     df["anio_mes"]   = df["fecha"].dt.to_period("M").astype(str)
     df["anio"]       = df["fecha"].dt.year
     df["mes"]        = df["fecha"].dt.month
@@ -205,7 +208,7 @@ productos_distintos = df_filtrado["id_producto"].nunique()
 # ENCABEZADO Y KPIs
 # ============================================================
 st.title("📊 Dashboard de Desempeño Comercial — TechNorte")
-st.markdown("**Audiencia:** Gerentes regionales · Director comercial · Marketing")
+st.markdown("*Audiencia:* Gerentes regionales · Director comercial · Marketing")
 
 col1, col2, col3, col4 = st.columns(4)
 with col1: st.metric("💰 Ventas Totales",     f"${ventas_totales:,.0f}")
@@ -232,18 +235,18 @@ tab0, tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
 ])
 
 # ----------------------------------------------------------
-# TAB 0: CONTEXTO (sin cambios)
+# TAB 0: CONTEXTO
 # ----------------------------------------------------------
 with tab0:
     st.header("Contexto del negocio y descripción de los datos")
     st.subheader("🏢 La empresa")
     st.markdown("""
-    **TechNorte** es una cadena de retail de tecnología, electrodomésticos, oficina, audio/video y gaming.
-    Opera en **Colombia, México, Perú, Chile y Argentina** a través de tres canales:
-    **tienda física, portal online y distribuidores**.
+    *TechNorte* es una cadena de retail de tecnología, electrodomésticos, oficina, audio/video y gaming.
+    Opera en *Colombia, México, Perú, Chile y Argentina* a través de tres canales:
+    *tienda física, portal online y distribuidores*.
     """)
     st.subheader("🎯 Audiencia y necesidad")
-    st.markdown("Dirigido a **gerentes regionales, director comercial y marketing** para monitorear "
+    st.markdown("Dirigido a *gerentes regionales, director comercial y marketing* para monitorear "
                 "ventas y rentabilidad y decidir sobre campañas, inventario y recursos.")
     st.subheader("❓ Preguntas de negocio")
     st.markdown("""
@@ -256,9 +259,9 @@ with tab0:
     st.subheader("🗃️ Estructura de los datos")
     st.markdown("""
     Modelo estrella con tres archivos CSV:
-    - **fact_ventas.csv**: ~500 k transacciones diarias con métricas calculadas.
-    - **dim_productos.csv**: 50 productos con categoría, subcategoría, marca y precio.
-    - **dim_clientes.csv**: 1 000 clientes anonimizados con segmento y ubicación.
+    - *fact_ventas.csv*: ~500 k transacciones diarias con métricas calculadas.
+    - *dim_productos.csv*: 50 productos con categoría, subcategoría, marca y precio.
+    - *dim_clientes.csv*: 1 000 clientes anonimizados con segmento y ubicación.
     """)
     st.info("💡 Haz clic en cualquier gráfico para filtrar todo el dashboard. Vuelve a hacer clic en el mismo gráfico (o en una zona vacía) para eliminar el filtro. También puedes usar el botón de la barra lateral.")
 
@@ -313,6 +316,8 @@ with tab1:
             if event_map.selection.points:
                 pais_sel = event_map.selection.points[0].get("location", None)
                 if pais_sel:
+                    # Mapeo inverso para mantener consistencia con los datos (si fuera necesario)
+                    # Pero como ya cambiamos en cargar_datos, el valor estará en inglés.
                     st.session_state.filtro_extra = {"pais": pais_sel}
             else:
                 if st.session_state.get("ultimo_click") == "mapa_paises":
@@ -682,7 +687,7 @@ with tab5:
     pareto_df["cumsum_pct"] = pareto_df["ingreso"].cumsum() / pareto_df["ingreso"].sum()
     pareto_df["rank"] = range(1, len(pareto_df)+1)
     n_80 = int((pareto_df["cumsum_pct"] < 0.80).sum()) + 1
-    st.info(f"📌 El **{n_80/len(pareto_df):.1%}** de los {etiqueta} genera el **80 %** de los ingresos "
+    st.info(f"📌 El *{n_80/len(pareto_df):.1%}* de los {etiqueta} genera el *80 %* de los ingresos "
             f"({n_80} de {len(pareto_df)}).")
 
     fig_pareto = make_subplots(specs=[[{"secondary_y": True}]])
